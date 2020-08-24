@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_134206) do
+ActiveRecord::Schema.define(version: 2020_08_24_144436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "business_cards", force: :cascade do |t|
+    t.string "firstname"
+    t.string "company"
+    t.string "email"
+    t.string "phone"
+    t.string "jobtitle"
+    t.string "website"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "lastname"
+    t.index ["user_id"], name: "index_business_cards_on_user_id"
+  end
+
+  create_table "collected_cards", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "business_card_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["business_card_id"], name: "index_collected_cards_on_business_card_id"
+    t.index ["user_id"], name: "index_collected_cards_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +50,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_134206) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "business_cards", "users"
+  add_foreign_key "collected_cards", "business_cards"
+  add_foreign_key "collected_cards", "users"
 end
