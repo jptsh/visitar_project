@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  resources :business_cards do 
+  resources :cards do 
     resources :collected_card, only: [:create]
   end
 
