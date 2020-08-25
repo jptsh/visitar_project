@@ -1,0 +1,17 @@
+<h1>Cards#new</h1>
+<p>Find me in app/views/cards/new.html.erb</p>
+
+
+<div>
+ <%= simple_form_for(@card) do |f| %>
+  <%= f.input :firstname, id:"input1" %>
+  <%= f.input :lastname %>
+  <%= f.input :jobtitle %>
+  <%= f.input :company %>
+  <%= f.input :phone %>
+  <%= f.input :email %>
+  <%= f.input :website %>
+  <%= f.submit %>
+<% end %>
+</div>
+
