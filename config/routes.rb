@@ -1,13 +1,12 @@
 Rails.application.routes.draw do
-  get 'business_cards/new'
-  get 'business_cards/create'
-  get 'cards/new'
-  get 'cards/create'
+  
+  # get 'cards/new'
+  # get 'cards/create'
   devise_for :users
   root to: 'pages#home'
 
   resources :business_cards do 
-    resources :collected_card, only: [:create]
+    resources :collected_card, only: [:new, :create]
   end
 
   resources :collected_cards, only: [:show, :index, :destroy]
