@@ -4,5 +4,6 @@ class CardsController < ApplicationController
     end
 
     def show
+      @card = BusinessCard.find(params[:id])
     end
 end

@@ -2,8 +2,8 @@
     <div class="row h-100">
         <div class="col-12 my-auto">
             <div class="w-80 mx-auto">
+            <!-- ---- --- --- Businesscard Design here --- --- --- --- -->
                 <div class="business-card-frame">
-                    <table id="tablePreview" class="table table-sm table-borderless">
                         <% @cards.each do |card| %>    
                             <!--Table head-->
                             <div class="bc-card-info">
@@ -11,25 +11,45 @@
                                     LOGO
                                 </div>
                                 <div class="bc-head">
-                                    <span class="bc-card-tag">firstname</span>
-                                    <span class="bc-card-tag">lastname</span>
-                                    <br>
-                                    <%= card.firstname %>
-                                    <%= card.lastname %>
+                                    <div class="box">
+                                        <div class="box-tag">
+                                            <span class="bc-card-tag">Firstname</span>
+                                            <br>
+                                            <span class="bc-card-data"><%= card.firstname %></span>
+                                        </div>
+                                        <div class="box-tag">
+                                            <span class="bc-card-tag">Lastname</span>
+                                            <br>
+                                            <span class="bc-card-data"><%= card.lastname %></span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="bc-body">
-                                    <span class="bc-card-tag">Telephone Nr.</span>
-                                    <span class="bc-card-tag">Address</span>
-                                    <br> 
-                                     <%= card.phone %>
+                                    <div class="box">
+                                        <div class="box-tag">
+                                            <span class="bc-card-tag">Telephone</span>
+                                            <br>
+                                            <span class="bc-card-data"><%= card.phone %></span>
+                                        </div>
+                                        <div class="box-tag">
+                                            <span class="bc-card-tag">Address</span>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="bc-footer">
-                                    <span class="bc-card-tag">E-Mail</span>
-                                    <%= card.email %>
+                                    <div class="box">
+                                        <div class="box-tag">
+                                            <span class="bc-card-tag">E-Mail</span>
+                                            <br>
+                                            <span class="bc-card-data"><%= card.email %></span>
+                                        </div> 
+                                    </div>
                                 </div>
                             </div> 
-                        <% end %>
+                    <% end %>
                 </div>
+                <!--- ---- ---- ----  ------ Businesscard Design here ------ ----- ----- ---->
+                
             </div>
         </div>
     </div>
