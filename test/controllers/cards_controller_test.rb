@@ -10,5 +10,4 @@ class CardsControllerTest < ActionDispatch::IntegrationTest
     get cards_create_url
     assert_response :success
   end
-
 end

@@ -3,7 +3,14 @@ class CardsController < ApplicationController
     @card = BusinessCard.new
   end
 
+  def index
+     @cards = BusinessCard.all
+  end
 
+  def show
+     @card = BusinessCard.find(params[:id])
+  end
+  
   def create
     # @user = User.find(params[:user_id])
     @card = BusinessCard.new(card_params)
