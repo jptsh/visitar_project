@@ -1,0 +1,37 @@
+.business-card-frame {  //The card layout 
+    max-width: 100%;
+    height: 200px;
+    background-color: white;
+    border-radius: 25px;
+    border: 1px solid;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+// Design here the Businesscard information 
+
+.bc-card-logo {
+    margin-bottom: 50px;
+}
+
+.box {
+    display: flex;
+}
+
+.box > .box-tag {
+    width: 50%;
+}
+
+.bc-card-tag {
+    font-weight: bold;
+}
+
+.bc-card-info {
+    margin: 10px 15px;
+    font-size: 12px;
+}
+
+// Design here the footer 
+
+.footer-design {
+    background-color: black;
+}
