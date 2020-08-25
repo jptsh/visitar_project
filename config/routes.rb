@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'business_cards/new'
+  get 'business_cards/create'
   get 'cards/new'
   get 'cards/create'
   devise_for :users

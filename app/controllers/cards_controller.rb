@@ -1,28 +1,25 @@
 class CardsController < ApplicationController
-  
+
   def new
-    @box = Box.find(params[:box_id])
-    @order = Order.new
-    #authorize @order
+    @card = Card.new
   end
 
 
   def create
-    @box = Box.find(params[:box_id])
-    @order = Order.new(order_params)
-    @order.user = current_user
-    @order.box = @box
-     @order.save!
-    #authorize @order
+    @user = User.find(params[:user_id])
+    @card = Card.new(card_params)
+    @card.user = current_user
 
-    if @order.save
-      redirect_to order_path(@order)
+    if @card.save
+      redirect_to card_path(@card)
     else
       render :new
     end
   end
 
-  def order_params
-    params.permit(:user_id, :box_id)
+  def card_params
+    params.require(:card).permit(:user_id, :card_id)
   end
+end
+
 end
