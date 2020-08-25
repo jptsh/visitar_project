@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
-  # get 'cards/new'
-  # get 'cards/create'
+  get 'cards/new'
+  post 'cards/create'
+  
   devise_for :users
   root to: 'pages#home'
 

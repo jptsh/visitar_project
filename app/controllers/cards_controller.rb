@@ -1,4 +1,4 @@
-class BusinessCardsController < ApplicationController
+class CardsController < ApplicationController
   def new
     @card = BusinessCard.new
   end
