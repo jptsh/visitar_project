@@ -9,7 +9,7 @@
 BusinessCard.create(
     name: "MyCard1",
 
-businesscard = BusinessCard.first_or_create(
+    businesscard = BusinessCard.first_or_create(
 
     firstname: "Joe",
     company: "email",
@@ -19,6 +19,7 @@ businesscard = BusinessCard.first_or_create(
     website: "www.joes.com",
     user_id: 1,
     lastname: "example"
+    )
 )
 
 BusinessCard.create(
