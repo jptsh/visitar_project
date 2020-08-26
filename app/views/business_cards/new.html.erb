@@ -1,26 +1,25 @@
-
-
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
-
       <div class="form-login">
-        <h1>Log In</h1>
-        <%= simple_form_for(@business_card) do |f| %>
-          <%= f.input :firstname, id:"input1" %>
-          <%= f.input :lastname %>
-          <%= f.input :jobtitle %>
-          <%= f.input :company %>
+        <h2>New Business Card</h2>
+        <%= simple_form_for(@card) do |f| %>
+          <%= f.input :firstname, required: true %>
+          <%= f.input :lastname, required: true %>
+          <%= f.input :jobtitle, required: true %>
+          <%= f.input :company, required: true %>
           <%= f.input :phone %>
-          <%= f.input :email %>
+          <%= f.input :email, required: true %>
           <%= f.input :website %>
-          <%= f.submit %>
+          <%= f.button :submit, "Log in", class: "btn btn-primary" %>
         <% end %>
       </div>
-      <!-- Insert form here -->
     </div>
   </div>
 </div>
+
+
+
+
 
 
