@@ -1,4 +1,4 @@
-.business-card-frame {  //The card layout 
+.business-card-frame {  //The card layout
     max-width: 100%;
     height: 200px;
     background-color: white;
@@ -7,7 +7,7 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-// Design here the Businesscard information 
+// Design here the Businesscard information
 
 .bc-card-logo {
     margin-bottom: 50px;
@@ -30,8 +30,18 @@
     font-size: 12px;
 }
 
-// Design here the footer 
+// Design here the footer
 
 .footer-design {
     background-color: black;
+}
+
+.btn-cards {
+  color: white !important;
+  text-decoration: none;
+}
+
+.btn-collected-cards {
+  color: white !important;
+  text-decoration: none;
 }

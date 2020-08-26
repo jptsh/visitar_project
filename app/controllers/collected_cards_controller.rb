@@ -1,5 +1,6 @@
 class CollectedCardsController < ApplicationController
   def index
+    @collectedcards = CollectedCard.all
   end
 
   def show
