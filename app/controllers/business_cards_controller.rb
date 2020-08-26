@@ -1,4 +1,6 @@
 class BusinessCardsController < ApplicationController
+  before_action :set_box, only: [:show]
+  
   def new
     @card = BusinessCard.new
   end
@@ -21,6 +23,18 @@ class BusinessCardsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+      @card = BusinessCard.find(params[:id])
+      @card.destroy
+      redirect_to business_card_path
+  end
+
+  private
+
+  def set_box
+    @card = BusinessCard.find(params[:id])
   end
 
   def card_params
