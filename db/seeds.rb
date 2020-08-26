@@ -8,7 +8,7 @@
 
 
 businesscard = BusinessCard.first_or_create(
-
+    name: "MyCard1"
     firstname: "Joe",
     company: "email",
     email: "joe@test.com",

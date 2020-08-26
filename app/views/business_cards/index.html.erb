@@ -8,7 +8,7 @@
         <div class="col-12 my-auto">
             <div class="w-80 mx-auto">
                     
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                    <div id="carouselExampleControls" class="carousel slide" data-interval="false">
                         <div class="carousel-inner">
                             <% @cards.each do |card| %>
                                 <div class="carousel-item <%=  "active" if @cards.first == card  %> ">
