@@ -1,17 +1,32 @@
 <div class="container vh-100">
 
   <div class="header-collected text-center">
-
-    <i class="fas fa-layer-group"></i>
+    <i class="fas fa-layer-group header-logo"></i>
     <p>Collected</p>
-
   </div>
 
-  <div class="collected-card-frame">
-    <% @collectedcards.each do |card| %>
-      <%= card.business_card %>
-    <% end %>
-  </div>
+  <div class="row h-100">
+    <div class="col-12 my-auto">
+      <div class="w-80 mx-auto">
 
+        <% @collectedcards.each do |card| %>
+          <div class="card-trip business-card-frame" style="margin-bottom: 50px; padding: 5px;">
+            <div class="card-trip-infos col-auto mb-3">
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
+                <div>
+                  <h3><%= card.business_card.name %></h3>
+                  <p><strong><%= "Name: #{card.business_card.firstname} #{card.business_card.lastname}" %></strong></p>
+                  <p><%= "phone: #{card.business_card.phone}" %></p>
+                  <p><%= "email: #{card.business_card.email}" %></p>
+                </div>
+            </div>
+          </div>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
 </div>
 <%= render '/shared/footer' %>
+

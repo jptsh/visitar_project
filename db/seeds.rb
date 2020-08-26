@@ -39,4 +39,3 @@ CollectedCard.create(
   user: user,
   business_card: businesscard,
 )
-
