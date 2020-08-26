@@ -6,9 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-BusinessCard.create(
-    name: "MyCard1",
-
 businesscard = BusinessCard.first_or_create(
 
     firstname: "Joe",
