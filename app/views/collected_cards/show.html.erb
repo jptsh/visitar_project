@@ -12,13 +12,14 @@
               <div class="card-trip-infos col-auto mb-3">
                   <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                   <div>
-                      <%= link_to business_card_path(@collectedcard) do  %>
-                          <h3><%= @collectedcard.name %></h3>
-                      <% end %>
-                      <p><strong><%= "Name: #{@collectedcard.firstname} #{@collectedcard.lastname}" %></strong></p>
-                      <p><%= "phone: #{@collectedcard.phone}" %></p>
-                      <p><%= "email: #{@collectedcard.email}" %></p>
+                      
+                        <h3><%= @collectedcard.business_card.name %></h3>
+
+                      <p><strong><%= "Name: #{@collectedcard.business_card.firstname} #{@collectedcard.business_card.lastname}" %></strong></p>
+                      <p><%= "phone: #{@collectedcard.business_card.phone}" %></p>
+                      <p><%= "email: #{@collectedcard.business_card.email}" %></p>
                     </div>
+                    <%= link_to "delete ", collected_card_path(@collectedcard), method: :delete %>
                 </div>
             </div>
        
