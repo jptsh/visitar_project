@@ -1,5 +1,11 @@
 
 <div class="container vh-100">
+
+  <div class="header-collected text-center">
+    <i class="fas fa-user-tie header-logo"></i>
+    <p>Business Cards</p>
+  </div>
+
     <div class="row h-100">
         <div class="col-12 my-auto">
             <div class="w-80 mx-auto">
@@ -8,7 +14,7 @@
                             <div class="card-trip-infos col-auto mb-3">
                                 <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                                 <div>
-                                    <%= link_to card_path(card) do  %>  
+                                    <%= link_to business_card_path(card) do  %>
                                         <h3><%= card.name %></h3>
                                     <% end %>
                                     <p><strong><%= "Name: #{card.firstname} #{card.lastname}" %></strong></p>
@@ -23,7 +29,6 @@
     </div>
 </div>
 <%= render '/shared/footer' %>
-
 
 <!--
 <div class="container">
@@ -88,3 +93,5 @@
     </div> 
 </div>
 -->
+
+
