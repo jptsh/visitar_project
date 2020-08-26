@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-BusinessCard.create(
+businesscard = BusinessCard.first_or_create(
     firstname: "Joe",
     company: "email",
     email: "joe@test.com",
@@ -15,4 +15,11 @@ BusinessCard.create(
     website: "www.joes.com",
     user_id: 1,
     lastname: "example"
+)
+
+user = User.find_by(email: "ecschulte@gmx.de")
+
+CollectedCard.create(
+  user: user,
+  business_card: businesscard,
 )
