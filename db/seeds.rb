@@ -8,6 +8,9 @@
 
 BusinessCard.create(
     name: "MyCard1",
+
+businesscard = BusinessCard.first_or_create(
+
     firstname: "Joe",
     company: "email",
     email: "joe@test.com",
@@ -29,3 +32,11 @@ BusinessCard.create(
     user_id: 1,
     lastname: "example"
 )
+
+user = User.find_by(email: "ecschulte@gmx.de")
+
+CollectedCard.create(
+  user: user,
+  business_card: businesscard,
+)
+

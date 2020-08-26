@@ -1,0 +1,17 @@
+<div class="container vh-100">
+
+  <div class="header-collected text-center">
+
+    <i class="fas fa-layer-group"></i>
+    <p>Collected</p>
+
+  </div>
+
+  <div class="collected-card-frame">
+    <% @collectedcards.each do |card| %>
+      <%= card.business_card %>
+    <% end %>
+  </div>
+
+</div>
+<%= render '/shared/footer' %>

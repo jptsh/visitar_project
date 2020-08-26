@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'collected_cards/index'
+  get 'collected_cards/show'
+  get 'collected_cards/new'
+  get 'collected_cards/create'
   get 'cards/new'
   post 'cards/create'
   
