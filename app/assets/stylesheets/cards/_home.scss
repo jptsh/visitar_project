@@ -13,6 +13,12 @@ a {
     text-decoration: none;
 }
 
+//Design here the background
+
+body {
+  background-color: white
+}
+
 // Design here the Businesscard information
 
 .bc-card-logo {
@@ -40,14 +46,25 @@ a {
 
 .footer-design {
     background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .btn-cards {
   color: white !important;
   text-decoration: none;
+  font-size: 38px;
+  margin-right: 20px;
 }
 
 .btn-collected-cards {
   color: white !important;
   text-decoration: none;
+  font-size: 38px;
+  margin-left: 20px;
+}
+
+.footertext {
+  font-size: 15px;
 }
