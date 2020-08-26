@@ -7,7 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 BusinessCard.create(
+    name: "MyCard1",
     firstname: "Joe",
+    company: "email",
+    email: "joe@test.com",
+    phone: "02340234890",
+    jobtitle: "outdoot labour",
+    website: "www.joes.com",
+    user_id: 1,
+    lastname: "example"
+)
+
+BusinessCard.create(
+    name: "MyCard2",
+    firstname: "Tom",
     company: "email",
     email: "joe@test.com",
     phone: "02340234890",

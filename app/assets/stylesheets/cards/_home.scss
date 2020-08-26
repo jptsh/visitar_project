@@ -5,9 +5,14 @@
     border-radius: 25px;
     border: 1px solid;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    cursor: pointer;
 }
 
-// Design here the Businesscard information 
+a {
+    text-decoration: none;
+}
+
+// Design here the Businesscard information
 
 .bc-card-logo {
     margin-bottom: 50px;
