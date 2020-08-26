@@ -1,5 +1,29 @@
-<div class="container">
-  <h1><%= @card.firstname %></h1>
-  <%= link_to "Back to Businesscards", root_path %>
-  <br>  
+<div class="container vh-100">
+  <div class="text-center">
+    <a class="btn btn-ghost" href="#">Share Card</a>
+    <h1><%= @card.name %></h1>
+  </div>
+  <br>
+  <div class="row h-100">
+      <div class="col-12 my-auto">
+          <div class="w-80 mx-auto">
+              <div class="card-trip business-card-frame" style="margin-bottom: 50px; padding: 5px;">
+                  <div class="card-trip-infos col-auto mb-3">
+                      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                      <div>
+                          <p><strong><%= "Name: #{@card.firstname} #{@card.lastname}" %></strong></p>
+                          <p><%= "phone: #{@card.phone}" %></p>
+                          <p><%= "email: #{@card.email}" %></p>
+                      </div>
+                  </div>
+              </div>
+              <div class="text-center">
+                <a class="btn btn-flat bg-primary p-20" href="#">Edit</a>
+                <a class="btn btn-ghost" href="#">Delete</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <%= render '/shared/footer' %>
 </div>
+
