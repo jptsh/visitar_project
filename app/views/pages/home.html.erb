@@ -10,10 +10,10 @@
 
 <div class="landing buttons" style="margin-top: 100px">
   <div class="visitar text-center">
-    <%= link_to "VISITAR", "", class: "visitar-button" %>
+    <%= link_to "VISITAR", new_user_session_path, class: "visitar-button" %>
   </div>
   <br>
   <div class="register text-center">
-    <%= link_to "Register", "", class: "register-button" %>
+    <%= link_to "Register", new_registration_path(:user), class: "register-button" %>
   </div>
 </div>
