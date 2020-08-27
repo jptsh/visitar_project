@@ -11,6 +11,8 @@ class BusinessCardsController < ApplicationController
 
   def show
      @card = BusinessCard.find(params[:id])
+     @enc_uri = URI.escape("#{@card.name};#{@card.firstname};#{@card.lastname}")
+     raise
   end
   
   def create
