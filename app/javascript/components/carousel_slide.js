@@ -4,8 +4,10 @@ const initCarouselSlideClick = () => {
       })*/
     
       $('#carouselExampleControls').on('slid.bs.carousel', function() {
-        console.log("slide evebt");
+        //console.log("slide evebt");
       })
   }
     
   export { initCarouselSlideClick };
+
+  

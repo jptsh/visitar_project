@@ -1,5 +1,5 @@
 class BusinessCardsController < ApplicationController
-  before_action :set_box, only: [:show]
+  before_action :set_card, only: [:show]
   
   def new
     @card = BusinessCard.new
@@ -33,7 +33,7 @@ class BusinessCardsController < ApplicationController
 
   private
 
-  def set_box
+  def set_card
     @card = BusinessCard.find(params[:id])
   end
 
