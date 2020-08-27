@@ -1,7 +1,6 @@
 class BusinessCardsController < ApplicationController
+  before_action :set_card, :set_vcard, only: [:show, :destroy]
 
-  before_action :set_card, :set_vcard, only: [:show]
-  
   def new
     @card = BusinessCard.new
   end
@@ -14,16 +13,15 @@ class BusinessCardsController < ApplicationController
      @enc_uri = URI.escape("#{@vcard.to_s}") #encoded uri of vcard for qr api
      @card = BusinessCard.find(params[:id])
      @enc_uri = URI.escape("#{@vcard.to_s}")
-     raise
   end
-  
+
   def create
     # @user = User.find(params[:user_id])
     @card = BusinessCard.new(card_params)
     @card.user = current_user
 
     if @card.save!
-      redirect_to business_card_path(@card)
+      redirect_to business_cards_path(@card)
     else
       render :new
     end
@@ -68,6 +66,6 @@ class BusinessCardsController < ApplicationController
   end
 
   def card_params
-    params.require(:business_card).permit(:firstname, :lastname, :jobtitle, :company, :phone, :email, :website)
+    params.require(:business_card).permit(:firstname, :lastname, :jobtitle, :company, :phone, :email, :website, :name)
   end
 end
