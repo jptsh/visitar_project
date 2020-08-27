@@ -16,10 +16,16 @@
             <%= link_to "Register", new_registration_path(:user), class: "ml-3 nav-link" %>
           </li>
         <% end %>
-  </div>
+</div>
 
 <div class="container h-100">
-
+  
+  <form class="form-inline">
+    <i class="fas fa-search" aria-hidden="true"></i>
+    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+      aria-label="Search">
+  </form>
+  
   <div class="header-collected text-center distance-margin-top-bottom">
     <i class="fas fa-user-tie header-logo"></i>
     <p>Business Cards</p>
