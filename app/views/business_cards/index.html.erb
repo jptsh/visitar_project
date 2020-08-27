@@ -1,14 +1,35 @@
+<div class="profile">
+        <% if user_signed_in? %>
+            <div class="nav-item dropdown">
+              <%= image_tag "https://source.unsplash.com/user/taylormae/400x400", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right dropdown-custom" aria-labelledby="navbarDropdown">
+                <%= link_to "My Profile", "", class: "dropdown-item" %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+
+            </div>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Register", new_registration_path(:user), class: "ml-3 nav-link" %>
+          </li>
+        <% end %>
+  </div>
+
 <div class="container h-100">
+
   <div class="header-collected text-center distance-margin-top-bottom">
     <i class="fas fa-user-tie header-logo"></i>
     <p>Business Cards</p>
     <%= link_to "Log out", destroy_user_session_path, method: :delete %> (
   </div>
-    
+
     <div class="row">
         <div class="col-12 my-auto">
             <div class="w-80 mx-auto">
-                    
+
                     <div id="carouselExampleControls" class="carousel slide" data-interval="false">
                         <div class="carousel-inner">
                             <% @cards.each do |card| %>
@@ -53,13 +74,13 @@
                                                             <span class="bc-card-tag">E-Mail</span>
                                                             <br>
                                                             <span class="bc-card-data"><%= card.email %></span>
-                                                        </div> 
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div> 
-                                        
+                                            </div>
+
                                     </div>
-                                    
+
                                 </div>
                             <% end %>
                         </div>
@@ -71,10 +92,10 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
-                    </div> 
+                    </div>
                     <div class="row text-center distance-margin-top-bottom">
                         <div class="col-12">
-                            <a class="btn btn-flat bg-primary" href="#">Add new</a>
+                            <a class="btn btn-flat bg-primary btn-new" href="business_cards/new">Add new</a>
                         </div>
                      </div>
             </div>
@@ -86,7 +107,7 @@
 
 <!--
 <div class="container">
-    
+
 </div>
 -->
 
