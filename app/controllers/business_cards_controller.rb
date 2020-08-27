@@ -1,5 +1,5 @@
 class BusinessCardsController < ApplicationController
-  before_action :set_card, only: [:show]
+  before_action :set_card, only: [:show, :destroy]
   
   def new
     @card = BusinessCard.new
@@ -11,6 +11,8 @@ class BusinessCardsController < ApplicationController
 
   def show
      @card = BusinessCard.find(params[:id])
+     @enc_uri = URI.escape("#{@card.name};#{@card.firstname};#{@card.lastname}")
+     raise
   end
   
   def create
@@ -38,8 +40,11 @@ class BusinessCardsController < ApplicationController
 
   def destroy
       @card = BusinessCard.find(params[:id])
-      @card.destroy!
-      redirect_to business_card_path
+    if @card.destroy!
+      redirect_to business_cards_path
+    else
+      render :show
+    end
   end
 
   private
