@@ -1,2 +1,35 @@
-<h1>CollectedCards#show</h1>
-<p>Find me in app/views/collected_cards/show.html.erb</p>
+<div class="container vh-100">
+
+  <div class="header-collected text-center">
+    <i class="fas fa-layer-group header-logo"></i>
+    <p>Collected Card</p>
+  </div>
+
+  <div class="row h-100">
+    <div class="col-12 my-auto">
+      <div class="w-80 mx-auto">
+          <div class="card-trip business-card-frame" style="margin-bottom: 50px; padding: 5px;">
+              <div class="card-trip-infos col-auto mb-3">
+                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                  <div>
+                      
+                        <h3><%= @collectedcard.business_card.name %></h3>
+
+                      <p><strong><%= "Name: #{@collectedcard.business_card.firstname} #{@collectedcard.business_card.lastname}" %></strong></p>
+                      <p><%= "phone: #{@collectedcard.business_card.phone}" %></p>
+                      <p><%= "email: #{@collectedcard.business_card.email}" %></p>
+                    </div>
+                    <%= link_to "delete ", collected_card_path(@collectedcard), method: :delete %>
+                </div>
+            </div>
+       
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<%= render '/shared/footer' %>
+ 
+
+  
