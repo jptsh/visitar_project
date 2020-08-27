@@ -1,5 +1,5 @@
 class BusinessCardsController < ApplicationController
-  before_action :set_card, only: [:show, :destroy]
+  before_action :set_card, :set_vcard, only: [:show, :destroy]
   
   def new
     @card = BusinessCard.new
@@ -10,8 +10,16 @@ class BusinessCardsController < ApplicationController
   end
 
   def show
+    @vcard = VCardigan.create(:version => '4.0')
+    @vcard = VCardigan.create
+    @vcard.name 'Strummer', 'Joe'
+    @vcard.fullname 'Joe Strummer'
+    @vcard.photo 'http://strummer.com/joe.jpg', :type => 'uri'
+    @vcard.email 'joe@strummer.com', :type => ['work', 'internet'], :preferred => 1
+    @vcard[:item1].url 'http://strummer.com'
+    @vcard[:item1].label 'Other'
      @card = BusinessCard.find(params[:id])
-     @enc_uri = URI.escape("#{@card.name};#{@card.firstname};#{@card.lastname}")
+     @enc_uri = URI.escape("#{@vcard.to_s}")
      raise
   end
   
@@ -51,6 +59,10 @@ class BusinessCardsController < ApplicationController
 
   def set_card
     @card = BusinessCard.find(params[:id])
+  end
+
+  def set_vcard
+    
   end
 
   def card_params
