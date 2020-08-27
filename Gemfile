@@ -30,7 +30,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'vcardigan'
 gem 'uri'
 gem 'devise'
-
+#BC card to vcard conversion
+gem 'uri', '~> 0.10.0'
+gem 'vcardigan', '~> 0.0.9'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'

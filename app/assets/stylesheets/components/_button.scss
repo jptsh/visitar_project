@@ -25,6 +25,26 @@
     color: white;
   }
 
+  .btn-back {
+    position: absolute;
+    top: 11px;
+    left: 15px;
+    font-size: 34px;
+    color: black;
+  }
+
+  .btn-new {
+    color: white;
+    background-color: #2AB7D0 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 15px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 5px;
+  }
+
   .btn-gradient {
     color: white;
     padding: 8px 24px;
@@ -43,21 +63,25 @@
   .visitar-button {
     color: white;
     background-color: #FF814C;
+    font-family: 'Poppins', sans-serif;
     padding-bottom: 8px;
     padding-top: 8px;
-    padding-left: 13px;
-    padding-right: 13px;
+    padding-left: 14.5px;
+    padding-right: 14.5px;
     border-radius: 5px;
+    font-size: 15px;
 
   }
 
   .register-button {
     color: white;
     background-color: #2AB7D0;
+    font-family: 'Poppins', sans-serif;
     padding-bottom: 8px;
     padding-top: 8px;
     padding-left: 11px;
     padding-right: 11px;
     border-radius: 5px;
+    font-size: 15px;
 
   }
