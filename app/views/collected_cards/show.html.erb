@@ -1,3 +1,7 @@
+<%= link_to collected_cards_path, class: 'btn-back'  do %>
+    <i class="fas fa-angle-left"></i>
+<% end %>
+
 <div class="container vh-100">
 
   <div class="header-collected text-center">
@@ -20,12 +24,10 @@
               </div>
             </div>
             <%= link_to "delete ", collected_card_path(@collectedcard), method: :delete, class: "btn btn-danger"  %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete %> (
        </div>
     </div>
   </div>
 </div>
 <%= render '/shared/footer' %>
- 
 
-  
+

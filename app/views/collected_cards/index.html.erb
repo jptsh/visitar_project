@@ -18,6 +18,9 @@
             <div class="card-trip-infos col-auto mb-3">
                 <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered"/>
                 <div>
+                  <%= link_to collected_card_path(card) do  %>
+                      <%= card.business_card.firstname %>
+                  <% end %>
                   <h3><%= card.business_card.name %></h3>
                   <p><strong><%= "Name: #{card.business_card.firstname} #{card.business_card.lastname}" %></strong></p>
                   <p><%= "phone: #{card.business_card.phone}" %></p>
