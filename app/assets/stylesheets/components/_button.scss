@@ -7,11 +7,11 @@
     opacity: 0.6;
     transition: opacity 0.3s ease;
   }
-  
+
   .btn-ghost:hover {
     opacity: 1;
   }
-  
+
   .btn-flat {
     color: white;
     padding: 8px 24px;
@@ -19,12 +19,12 @@
     background: #1EDD88;
     transition: background 0.3s ease;
   }
-  
+
   .btn-flat:hover {
     background: #1BCB7F;
     color: white;
   }
-  
+
   .btn-gradient {
     color: white;
     padding: 8px 24px;
@@ -34,9 +34,30 @@
     transition: background 0.3s ease;
     border: 1px solid #0F60C4;
   }
-  
+
   .btn-gradient:hover {
     background: linear-gradient(#147EFF, #0F67DA);
     color: white;
   }
-  
+
+  .visitar-button {
+    color: white;
+    background-color: #FF814C;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 5px;
+
+  }
+
+  .register-button {
+    color: white;
+    background-color: #2AB7D0;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-left: 11px;
+    padding-right: 11px;
+    border-radius: 5px;
+
+  }
