@@ -50,7 +50,8 @@
       <a class="btn btn-flat bg-primary" href="#">Edit</a>
     </div>
     <div class="col-6">
-      <p><%= link_to "Delete", business_cards_path(@card), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost"  %> </p>
+      <%= link_to "Test", business_cards_path(@card), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost"  %>
+      <!-- <p><%= link_to "Delete", root_path, remote: true, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-ghost"  %> </p> -->
     </div>
 </div>
   <%= render '/shared/footer' %>
