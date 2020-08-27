@@ -14,5 +14,8 @@ class CollectedCardsController < ApplicationController
   end
 
   def destroy
+    @collectedcard = CollectedCard.find(params[:id])
+    @collectedcard.destroy
+    redirect_to collected_card_path(@collectedcard)
   end
 end
