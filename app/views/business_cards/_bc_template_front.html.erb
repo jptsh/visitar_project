@@ -2,8 +2,8 @@
     <div class="bc-card-info">
         <div class="bc-card-logo">
             <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-            <%= link_to business_card_path(@card) do  %>
-                <%= @card.name %>
+            <%= link_to business_card_path(card) do  %>
+                <%= card.name %>
             <% end %>
         </div>
         <div class="bc-head">
@@ -11,12 +11,12 @@
                 <div class="box-tag">
                     <span class="bc-card-tag">Firstname</span>
                     <br>
-                    <span class="bc-card-data"><%= @card.firstname %></span>
+                    <span class="bc-card-data"><%= card.firstname %></span>
                 </div>
                 <div class="box-tag">
                     <span class="bc-card-tag">Lastname</span>
                     <br>
-                    <span class="bc-card-data"><%= @card.lastname %></span>
+                    <span class="bc-card-data"><%= card.lastname %></span>
                 </div>
             </div>
         </div>
@@ -25,7 +25,7 @@
                 <div class="box-tag">
                     <span class="bc-card-tag">Telephone</span>
                     <br>
-                    <span class="bc-card-data"><%= @card.phone %></span>
+                    <span class="bc-card-data"><%= card.phone %></span>
                 </div>
                 <div class="box-tag">
                     <span class="bc-card-tag">Address</span>
@@ -37,7 +37,7 @@
                 <div class="box-tag">
                     <span class="bc-card-tag">E-Mail</span>
                     <br>
-                    <span class="bc-card-data"><%= @card.email %></span>
+                    <span class="bc-card-data"><%= card.email %></span>
                 </div> 
             </div>
         </div>

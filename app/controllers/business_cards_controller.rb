@@ -20,14 +20,26 @@ class BusinessCardsController < ApplicationController
     @card = BusinessCard.new(card_params)
     @card.user = current_user
 
-    if @card.save
+    if @card.save!
       redirect_to business_card_path(@card)
     else
       render :new
     end
   end
 
+  def edit
+    @user = current_user
+    @card = BusinessCard.find(params[:id])
+  end
+
+  def update
+    @card = BusinessCard.find(params[:id])
+    @card.update!(card_params)
+    redirect_to business_card_path(@card)
+  end
+
   def destroy
+      @card = BusinessCard.find(params[:id])
     if @card.destroy!
       redirect_to business_cards_path
     else
@@ -42,6 +54,6 @@ class BusinessCardsController < ApplicationController
   end
 
   def card_params
-    params.require(:business_card).permit(:user_id, :card_id)
+    params.require(:business_card).permit(:firstname, :lastname, :jobtitle, :company, :phone, :email, :website)
   end
 end
