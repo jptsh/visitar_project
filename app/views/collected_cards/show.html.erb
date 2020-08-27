@@ -10,22 +10,18 @@
       <div class="w-80 mx-auto">
           <div class="card-trip business-card-frame" style="margin-bottom: 50px; padding: 5px;">
               <div class="card-trip-infos col-auto mb-3">
-                  <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-                  <div>
-                      
-                        <h3><%= @collectedcard.business_card.name %></h3>
-
-                      <p><strong><%= "Name: #{@collectedcard.business_card.firstname} #{@collectedcard.business_card.lastname}" %></strong></p>
-                      <p><%= "phone: #{@collectedcard.business_card.phone}" %></p>
-                      <p><%= "email: #{@collectedcard.business_card.email}" %></p>
-                    </div>
-                    <%= link_to "delete ", collected_card_path(@collectedcard), method: :delete %>
+                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                <div>
+                  <h3><%= @collectedcard.business_card.name %></h3>
+                  <p><strong><%= "Name: #{@collectedcard.business_card.firstname} #{@collectedcard.business_card.lastname}" %></strong></p>
+                  <p><%= "phone: #{@collectedcard.business_card.phone}" %></p>
+                  <p><%= "email: #{@collectedcard.business_card.email}" %></p>
                 </div>
+              </div>
             </div>
-       
-
-
-      </div>
+            <%= link_to "delete ", collected_card_path(@collectedcard), method: :delete, class: "btn btn-danger"  %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %> (
+       </div>
     </div>
   </div>
 </div>

@@ -23,6 +23,7 @@
   <div class="header-collected text-center distance-margin-top-bottom">
     <i class="fas fa-user-tie header-logo"></i>
     <p>Business Cards</p>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %> (
   </div>
 
     <div class="row">
@@ -100,6 +101,7 @@
             </div>
         </div>
     </div>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %> (
 </div>
 <%= render '/shared/footer' %>
 
