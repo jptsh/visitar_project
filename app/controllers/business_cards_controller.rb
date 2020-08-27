@@ -10,14 +10,7 @@ class BusinessCardsController < ApplicationController
   end
 
   def show
-    @vcard = VCardigan.create(:version => '4.0')
-    @vcard = VCardigan.create
-    @vcard.name 'Strummer', 'Joe'
-    @vcard.fullname 'Joe Strummer'
-    @vcard.photo 'http://strummer.com/joe.jpg', :type => 'uri'
-    @vcard.email 'joe@strummer.com', :type => ['work', 'internet'], :preferred => 1
-    @vcard[:item1].url 'http://strummer.com'
-    @vcard[:item1].label 'Other'
+     @enc_uri = URI.escape("#{@vcard.to_s}") #encoded uri of vcard for qr api
      @card = BusinessCard.find(params[:id])
      @enc_uri = URI.escape("#{@vcard.to_s}")
   end
@@ -56,12 +49,20 @@ class BusinessCardsController < ApplicationController
 
   private
 
-  def set_card
-    @card = BusinessCard.find(params[:id])
+  def set_vcard #please edit here the bc_card credentials for qr_code generator in show
+    @vcard = VCardigan.create(:version => '4.0')
+    @vcard = VCardigan.create
+    @vcard.name @card.lastname, @card.firstname
+    @vcard.fullname "#{@card.firstname} #{@card.lastname}"
+    @vcard.phone "#{@card.phone}"
+    @vcard.photo 'http://strummer.com/joe.jpg', :type => 'uri'
+    @vcard.email "#{@card.firstname}@example.com", :type => ['work', 'internet'], :preferred => 1
+    @vcard[:item1].url "#{@card.website}"
+    @vcard[:item1].label 'Other'
   end
 
-  def set_vcard
-
+  def set_card
+    @card = BusinessCard.find(params[:id])
   end
 
   def card_params
