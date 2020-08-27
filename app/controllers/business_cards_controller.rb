@@ -26,10 +26,10 @@ class BusinessCardsController < ApplicationController
   end
 
   def destroy
-    if @card.destroy
+    if @card.destroy!
       redirect_to business_cards_path
     else
-      redirect_to business_card_path(@card)
+      render :show
     end
   end
 
