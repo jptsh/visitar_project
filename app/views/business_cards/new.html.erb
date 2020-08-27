@@ -1,4 +1,6 @@
-
+<%= link_to business_cards_path, class: 'btn-back'  do %>
+    <i class="fas fa-angle-left"></i>
+<% end %>
 
 
 <div class="container">
@@ -7,6 +9,7 @@
       <div class="form-login">
         <h2>New Business Card</h2>
         <%= simple_form_for(@card) do |f| %>
+          <%= f.input :name, required: true %>
           <%= f.input :firstname, required: true %>
           <%= f.input :lastname, required: true %>
           <%= f.input :jobtitle, required: true %>
