@@ -1,42 +1,39 @@
- <div class="business-card-frame">
-    <div class="bc-card-info">
-        <div class="bc-card-logo">
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-        </div>
-        <div class="bc-head">
-            <div class="box">
-                <div class="box-tag">
-                    <span class="bc-card-tag">Firstname</span>
-                    <br>
-                    <span class="bc-card-data"><%= card.firstname %></span>
-                </div>
-                <div class="box-tag">
-                    <span class="bc-card-tag">Lastname</span>
-                    <br>
-                    <span class="bc-card-data"><%= card.lastname %></span>
-                </div>
-            </div>
-        </div>
-        <div class="bc-body">
-            <div class="box">
-                <div class="box-tag">
-                    <span class="bc-card-tag">Telephone</span>
-                    <br>
-                    <span class="bc-card-data"><%= card.phone %></span>
-                </div>
-                <div class="box-tag">
-                    <span class="bc-card-tag">Address</span>
-                </div>
-            </div>
-        </div>
-        <div class="bc-footer">
-            <div class="box">
-                <div class="box-tag">
-                    <span class="bc-card-tag">E-Mail</span>
-                    <br>
-                    <span class="bc-card-data"><%= card.email %></span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<div class="business-card-frame">
+                                            <div class="bc-card-info">
+                                                <div class="bc-card-logo logo-data">
+                                                  <%= card.company %>
+                                                <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                                                 -->
+                                                </div>
+                                                <div class="bc-head">
+                                                    <div class="box">
+                                                        <div class="box-tag person-data">
+                                                            <span class="bc-card-data card-name"><%= card.firstname %> <%= card.lastname %></span>
+                                                            <br>
+                                                            <span class="bc-card-data card-title"><%= card.jobtitle %></span>
+                                                        </div>
+                                                        <!-- <div class="box-tag">
+                                                            <span class="bc-card-tag">Lastname</span>
+                                                            <br>
+                                                            <span class="bc-card-data"><%= card.lastname %></span>
+                                                        </div> -->
+                                                    </div>
+                                                </div>
+                                                <div class="bc-body">
+                                                    <div class="box">
+                                                        <div class="box-tag contact-data">
+                                                            <span class="bc-card-data"><%=card.phone %></span>
+                                                            <br>
+                                                            <span class="bc-card-data"><%= card.email %></span>
+                                                        </div>
+                                                        <div class="box-tag address-data">
+                                                            <span class="bc-card-data"><%= card.streetname %></span>
+                                                            <br>
+                                                            <span class="bc-card-data"><%= card.postalcode %> <%= card.city %> </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                    </div>
+
