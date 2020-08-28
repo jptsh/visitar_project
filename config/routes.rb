@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :business_cards do 
-    resources :collected_card, only: [:new, :create]
+    resources :collected_card, only: [:new, :create, :index]
   end
 
   
