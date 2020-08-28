@@ -15,7 +15,10 @@ businesscard = BusinessCard.first_or_create(
     jobtitle: "outdoot labour",
     website: "www.joes.com",
     user_id: 1,
-    lastname: "example"
+    lastname: "example",
+    streetname: "Kochstraße 40",
+    postalcode: "22301",
+    city: "Berlin"
   )
 
 
