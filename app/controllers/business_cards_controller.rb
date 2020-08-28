@@ -6,7 +6,12 @@ class BusinessCardsController < ApplicationController
   end
 
   def index
-     @cards = BusinessCard.all
+    #  @cards = BusinessCard.all
+     if params[:query].present?
+      @cards = BusinessCard.where("firstname ILIKE ?", params[:query])
+    else
+      @cards = BusinessCard.all
+    end
   end
 
   def show
