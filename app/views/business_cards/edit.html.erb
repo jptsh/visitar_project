@@ -6,13 +6,16 @@
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-4">
       <div class="form-login">
-        <h2>New Business Card</h2>
+        <h2> Edit <%= @card.name %></h2>
         <%= simple_form_for(@card) do |f| %>
           <%= f.input :name, required: true %>
           <%= f.input :firstname, required: true %>
           <%= f.input :lastname, required: true %>
           <%= f.input :jobtitle, required: true %>
           <%= f.input :company, required: true %>
+          <%= f.input :streetname %>
+          <%= f.input :postalcode %>
+          <%= f.input :city %>
           <%= f.input :phone %>
           <%= f.input :email, required: true %>
           <%= f.input :website %>

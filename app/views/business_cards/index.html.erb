@@ -30,15 +30,20 @@
 
                     <div id="carouselExampleControls" class="carousel slide" data-interval="false">
                         <div class="carousel-inner">
+
                             <% @cards.each do |card| %>
                                 <div class="carousel-item <%=  "active" if @cards.first == card  %> ">
+                                    <div class="text-center distance-margin-top-bottom">
+                                        <%= link_to business_card_path(card) do  %>
+                                            <%= card.name %>
+                                        <% end %>
+                                    </div>
                                     <div class="business-card-frame">
                                             <div class="bc-card-info">
                                                 <div class="bc-card-logo">
-                                                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-                                                 <%= link_to business_card_path(card) do  %>
-                                                    <%= card.name %>
-                                                <% end %>
+                                                  <%= card.company %>
+                                                <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                                                 -->
                                                 </div>
                                                 <div class="bc-head">
                                                     <div class="box">
@@ -47,11 +52,11 @@
                                                             <br>
                                                             <span class="bc-card-data"><%= card.jobtitle %></span>
                                                         </div>
-                                                        <div class="box-tag">
-                                                            <!-- <span class="bc-card-tag">Lastname</span>
+                                                        <!-- <div class="box-tag">
+                                                            <span class="bc-card-tag">Lastname</span>
                                                             <br>
-                                                            <span class="bc-card-data"><%= card.lastname %></span> -->
-                                                        </div>
+                                                            <span class="bc-card-data"><%= card.lastname %></span>
+                                                        </div> -->
                                                     </div>
                                                 </div>
                                                 <div class="bc-body">
@@ -62,7 +67,9 @@
                                                             <span class="bc-card-data"><%= card.phone %></span>
                                                         </div>
                                                         <div class="box-tag">
-                                                            <!-- <span class="bc-card-tag">Address</span> -->
+                                                            <span class="bc-card-data"><%= card.streetname %></span>
+                                                            <br>
+                                                            <span class="bc-card-data"><%= card.postalcode %> <%= card.city %> </span>
                                                         </div>
                                                     </div>
                                                 </div>

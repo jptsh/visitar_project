@@ -66,6 +66,6 @@ class BusinessCardsController < ApplicationController
   end
 
   def card_params
-    params.require(:business_card).permit(:firstname, :lastname, :jobtitle, :company, :phone, :email, :website, :name)
+    params.require(:business_card).permit(:firstname, :lastname, :jobtitle, :company, :phone, :email, :website, :name, :postalcode, :streetname, :city)
   end
 end
