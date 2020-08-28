@@ -11,4 +11,11 @@ const initCarddOnClick = () => {
       });
 }
 
+const initCardOnBtn = () => {
+    $("#btn-action").click(function() {
+      $(".flipper").toggleClass("flip");
+  });
+}
+
 export { initCarddOnClick  };
+export { initCardOnBtn  };

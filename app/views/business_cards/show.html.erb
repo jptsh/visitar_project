@@ -19,7 +19,9 @@
 
 <div class="container h-100">
   <div class="header-collected text-center">
-      <a class="btn btn-ghost" href="#">Share Card</a>
+      <div id="btn-action" class="btn btn-ghost">
+          Show Card
+      </div>
   </div>
   <form class="form-inline">
   <i class="fas fa-search" aria-hidden="true"></i>
@@ -31,26 +33,24 @@
         <div class="col-12 my-auto">
           <div class="w-100 mx-auto">
 
-              <section class="custom">
+            <section class="custom">
               <div class="container">
                 <div class="row">
                   <div class="flipper col-sm-3 col-sm-offset-1">
                       <div class="card">
                         <div class="front">
-
-                          <%= render 'bc_template_front', card: @card %>
+                            <%= render 'bc_template_front', card: @card %>
                         </div>
                         <div class="back">
-                          <%= render 'bc_template_back' %>
-                          <div class="goback">
-
-                          </div>
+                            <%= render 'bc_template_back' %>
+                        <div class="goback">
                         </div>
                       </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              </section>
+            </section>
 
           </div>
         </div>
