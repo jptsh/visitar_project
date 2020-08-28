@@ -4,12 +4,15 @@
 
 <div class="container">
 
-  <form class="form-inline">
-    <i class="fas fa-search" aria-hidden="true"></i>
-    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-      aria-label="Search">
-  </form>
-
+  <%= form_tag collected_cards_path, method: :get do %>
+   <%= text_field_tag :query,
+     params[:query],
+     class: "form-control",
+     placeholder: "Find a card"
+   %>
+   <%= submit_tag "Search", class: "btn btn-primary btn-lg btn-block mt-2" %>
+ <% end %>
+ 
 
   <div class="header-collected text-center">
     <i class="fas fa-layer-group header-logo"></i>
