@@ -18,17 +18,14 @@
 <% end %>
 
 <div class="container h-100">
-  <div class="header-collected text-center">
-      <div id="btn-action" class="btn btn-ghost">
-          Show Card
-      </div>
+  <div class="header-collected text-center distance-margin-top-bottom">
+      <h3 class="text-center distance-margin-top-bottom"><%= @card.name %></h3>
+      <div id="btn-action" class="btn text-white rounded-pill btn-lg " style="background-color: #2AB7D0;">Show Card</div>
   </div>
-  
-    <h3 class="text-center distance-margin-top-bottom"><%= @card.name %></h3>
     <div class="row">
         <div class="col-12 my-auto">
           <div class="w-100 mx-auto">
-
+          
             <section class="custom">
               <div class="container">
                 <div class="row">
@@ -47,19 +44,19 @@
                 </div>
               </div>
             </section>
-
+            <div class="row text-center w-100 distance-margin-top-bottom">
+              <div class="col-6">
+                    <p><%= link_to "Edit", edit_business_card_path(@card), class: "btn btn-lg text-white", style: "background-color: #2AB7D0;" %> </p>
+              </div>
+              <div class="col-6">
+                    <p><%= link_to "Delete", business_card_path(@card), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-ghost btn-lg" %></p>
+              </div>
+            </div>
           </div>
         </div>
+        
     </div>
     
-</div>
-  <div class="row text-center w-100 distance-margin-top-bottom">
-      <div class="col-6">
-            <p><%= link_to " Edit ", edit_business_card_path(@card), class: "btn btn-primary btn-lg"  %> </p>
-      </div>
-      <div class="col-6">
-            <p><%= link_to "Delete", business_card_path(@card), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-lg" %></p>
-      </div>
   </div>
 </div>
   <%= render '/shared/footer' %>
