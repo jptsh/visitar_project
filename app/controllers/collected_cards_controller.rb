@@ -1,6 +1,12 @@
 class CollectedCardsController < ApplicationController
   def index
-    @collectedcards = CollectedCard.all
+    if params[:query].present?
+      # @cards = BusinessCard.where("firstname ILIKE ?", params[:query])
+      sql_query = "firstname @@ :query OR lastname @@ :query OR jobtitle @@ :query OR city @@ :query OR postalcode @@ :query"
+      @cards = BusinessCard.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @collectedcards = CollectedCard.all
+    end
   end
 
   def show
