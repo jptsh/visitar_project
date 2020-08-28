@@ -24,6 +24,7 @@
               </div>
             </div>
             <%= link_to "delete ", collected_card_path(@collectedcard), method: :delete, class: "btn btn-danger"  %>
+            <%= link_to "Visit website", "http://#{@collectedcard.business_card.website}", class: "btn-website"  %>
        </div>
     </div>
   </div>
