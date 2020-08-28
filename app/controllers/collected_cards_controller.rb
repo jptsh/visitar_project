@@ -5,6 +5,7 @@ class CollectedCardsController < ApplicationController
     #   @cards = CollectedCard.where(sql_query, query: "%#{params[:query]}%")
     # else
     @collectedcards = CollectedCard.all
+   
     #   redirect_to collected_cards_path
     # end
   end

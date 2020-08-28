@@ -55,6 +55,11 @@ class BusinessCardsController < ApplicationController
     @vcard.name @card.lastname, @card.firstname
     @vcard.fullname "#{@card.firstname} #{@card.lastname}"
     @vcard.phone "#{@card.phone}"
+    @vcard.jobtitle "#{@card.jobtitle}"
+    @vcard.website "#{@card.website}"
+    @vcard.postalcode "#{@card.postalcode}"
+    @vcard.city "#{@card.city}"
+    @vcard.streetname  "#{@card.streetname}"
     @vcard.photo 'http://strummer.com/joe.jpg', :type => 'uri'
     @vcard.email "#{@card.firstname}@example.com", :type => ['work', 'internet'], :preferred => 1
     @vcard[:item1].url "#{@card.website}"
