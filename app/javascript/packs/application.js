@@ -29,10 +29,13 @@ import "bootstrap";
 // import { initSelect2 } from '../components/init_select2';
 import { initCarouselSlideClick } from '../components/carousel_slide.js';
 import { initCarddOnClick } from '../components/flip_card.js';
+import { initCardOnBtn  } from '../components/flip_card.js';
+
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initCarouselSlideClick();
   initCarddOnClick();
+  initCardOnBtn();
 });
