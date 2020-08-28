@@ -57,18 +57,14 @@
     </div>
     
 </div>
-<div class="row text-center w-100 distance-margin-top-bottom">
-    <div class="col-6">
-
-    </div>
-    <div class="col-6">
-            <p><%= link_to "Edit", edit_business_card_path(@card) %></p>
-    </div>
-
-    </div>
-    <div class="col-6">
-            <p><%= link_to "Delete", business_card_path(@card), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></p>
-    </div>
+  <div class="row text-center w-100 distance-margin-top-bottom">
+      <div class="col-6">
+            <p><%= link_to "edit", edit_business_card_path(@card), class: "btn btn-ghost"  %> </p>
+      </div>
+      <div class="col-6">
+            <p><%= link_to "Delete", business_card_path(@card), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "btn bg-primary" %></p>a
+      </div>
+  </div>
 </div>
   <%= render '/shared/footer' %>
 
