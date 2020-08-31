@@ -67,6 +67,23 @@ collectedcard2 = BusinessCard.create!(
   )
   puts "collected card 2"
 
+collectedcard3 = BusinessCard.create!(
+  name: "BCG",
+  firstname: "Eduard",
+  company: "BCG",
+  email: "ecschulte@gmx.de",
+  phone: "+49 173 645 2234",
+  jobtitle: "Junior Consultant",
+  website: "www.bcg.com",
+  user_id: user3.id,
+  lastname: "Schulte",
+  streetname: "Anklamer 18",
+  postalcode: "1230",
+  city: "Berlin"
+  )
+  puts "collected card 3"
+
+
 CollectedCard.create!(
   user_id: user2.id ,
   business_card_id: collectedcard1.id,
@@ -77,4 +94,7 @@ CollectedCard.create!(
   business_card_id: collectedcard2.id,
 )
 
-
+CollectedCard.create!(
+  user_id: user3.id ,
+  business_card_id: collectedcard3.id,
+)
