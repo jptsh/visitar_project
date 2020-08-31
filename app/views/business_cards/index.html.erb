@@ -1,3 +1,4 @@
+
 <div class="profile">
         <% if user_signed_in? %>
             <div class="nav-item dropdown">
@@ -44,6 +45,9 @@
                                                   <%= card.company %>
                                                 <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
                                                  -->
+                                                 <% if card.photo.attached? %>
+                                                 <%= cl_image_tag card.photo.key, height: 100, width: 100, crop: :thumb %>
+                                                 <% end %>
                                                 </div>
                                                 <div class="bc-head">
                                                     <div class="box">
