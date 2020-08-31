@@ -7,14 +7,9 @@
 
 .card-name-show {
   font-family: 'Poppins', sans-serif !important;
+  font-size: 20px;
 }
 
-.btn-edit {
-
-}
-
-.btn-delete {
-}
 // Design of bussiness card
 .logo-data {
   padding-top: 12px;
@@ -45,6 +40,10 @@
   }
 }
 
+.margin-name {
+  margin-bottom: 10px;
+
+}
 .address-data {
   padding-top: 17px;
   padding-left: 20px;
@@ -64,6 +63,7 @@
 
 
 a {
+    color: black;
     text-decoration: none;
 }
 
@@ -90,7 +90,7 @@ a {
 //Design here the background
 
 body {
-  background-color: white
+  background-color: white;
 }
 
 // Design here the Businesscard information
@@ -133,19 +133,19 @@ body {
 .btn-cards {
   color: white !important;
   text-decoration: none;
-  font-size: 38px;
+  font-size: 30px;
   margin-right: 20px;
 }
 
 .btn-collected-cards {
   color: white !important;
   text-decoration: none;
-  font-size: 38px;
+  font-size: 30px;
   margin-left: 20px;
 }
 
 .footertext {
-  font-size: 15px;
+  font-size: 13px;
 }
 
 // Design of the profile avatar on the index page
