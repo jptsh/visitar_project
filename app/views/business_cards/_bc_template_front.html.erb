@@ -2,7 +2,9 @@
   <div class="bc-card-info">
     <div class="bc-card-logo logo-data">
       <%= card.company %>
+      <% if @card.photo.attached? %>
       <%= cl_image_tag @card.photo.key, height: 100, width: 100, crop: :thumb %>
+      <% end %>
     </div>
     <div class="bc-head">
         <div class="box">
