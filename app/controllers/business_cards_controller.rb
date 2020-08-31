@@ -6,7 +6,7 @@ class BusinessCardsController < ApplicationController
   end
 
   def index
-    @cards = BusinessCard.all
+    @cards = current_user.business_cards 
   end
 
   def show

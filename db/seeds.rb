@@ -28,11 +28,11 @@ User.destroy_all
 
 
 
-user1 = User.create!(email: "jaber@gmail.com", password: "123456")
+user1 = User.create!(email: "jaber@example.com", password: "123456")
 puts "user1 created"
-user2 = User.create!(email: "jp@gmail.com", password: "1234567")
+user2 = User.create!(email: "jp@example.com", password: "1234567")
 puts "user2 created"
-user3 = User.create!(email: "ecschulte@gmx.de", password: "123456")
+user3 = User.create!(email: "ecschulte@example.com", password: "123456")
 puts "user3 created"
 
 collectedcard1 = BusinessCard.create!(
@@ -43,7 +43,7 @@ collectedcard1 = BusinessCard.create!(
   phone: "+49 171 567755",
   jobtitle: "Web Developer",
   website: "www.lewagon.com/berlin",
-  user_id: user1.id,
+  user_id: user2.id,
   lastname: "Al Adawi",
   streetname: "Kochstraße 40",
   postalcode: "1654",
@@ -85,7 +85,7 @@ collectedcard3 = BusinessCard.create!(
 
 
 CollectedCard.create!(
-  user_id: user2.id ,
+  user_id: user1.id ,
   business_card_id: collectedcard1.id,
 )
 
@@ -95,6 +95,6 @@ CollectedCard.create!(
 )
 
 CollectedCard.create!(
-  user_id: user3.id ,
+  user_id: user1.id ,
   business_card_id: collectedcard3.id,
 )
