@@ -12,6 +12,47 @@
     opacity: 1;
   }
 
+
+
+.fa-creative-commons-share:before {
+    color: #FF814C !important;
+    font-size: 60px;
+}
+
+
+// show business cards
+
+.show-buttons {
+  display: flex;
+  align-items: center;
+}
+
+  // edit button
+.btn-edit{
+
+  padding-right: 0px;
+
+  .fa-user-edit:before {
+  color: #2AB7D0 !important;
+  font-size: 35px;
+}
+
+}
+
+// delete button
+
+.btn-delete {
+
+  padding-left: 0px;
+
+  .fa-user-times:before {
+  color: #eb8f8f !important;
+  text-decoration: none;
+  font-size: 35px;
+}
+}
+
+
   .btn-flat {
     color: white;
     padding: 8px 24px;

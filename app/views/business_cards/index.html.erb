@@ -34,9 +34,9 @@
 
                             <% @cards.each do |card| %>
                                 <div class="carousel-item <%=  "active" if @cards.first == card  %> ">
-                                    <div class="text-center distance-margin-top-bottom">
+                                    <div class="text-center distance-margin-top-bottom" style="margin-bottom: 5px; font-size: 12px;">
                                         <%= link_to business_card_path(card) do  %>
-                                            <%= card.name %>
+                                            <p> View Card </p>
                                         <% end %>
                                     </div>
                                     <div class="business-card-frame">
