@@ -39,6 +39,11 @@
 
 }
 
+.form-control {
+  border-radius: 5px !important;
+  font-family: 'Poppins', sans-serif !important;
+  background-color: #121212;
+}
 // delete button
 
 .btn-delete {
@@ -50,6 +55,7 @@
   text-decoration: none;
   font-size: 35px;
 }
+
 }
 
 
@@ -66,9 +72,20 @@
     color: white;
   }
 
+  .search-btn {
+    border-radius: 5px;
+    background-color: #2AB7D0;
+    color: white;
+    font-family: 'Poppins', sans-serif !important;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
   .btn-back {
     position: absolute;
-    top: 11px;
+    top: 5px;
     left: 15px;
     font-size: 34px;
     color: black;
