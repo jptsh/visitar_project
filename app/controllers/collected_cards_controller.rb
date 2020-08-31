@@ -21,8 +21,7 @@ class CollectedCardsController < ApplicationController
 
   def create
     qr_code = QrCode.create(data: @qr_data)
-    @business_card = BusinessCard.find(qr_code[:data].last)
-
+    @business_card = BusinessCard.find(qr_code[:data].split("/").last)
     @collected_card = CollectedCard.new(user_id: @business_card[:user_id], business_card_id: @business_card[:id])
     # @collected_card[:user_id] = @business_card[:user_id]
     # @collected_card[:business_card_id] = @business_card[:id]
