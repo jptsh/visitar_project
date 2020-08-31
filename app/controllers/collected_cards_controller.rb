@@ -1,13 +1,11 @@
 class CollectedCardsController < ApplicationController
   def index
-    # if params[:query].present?
-    #   sql_query = "firstname @@ :query OR lastname @@ :query OR jobtitle @@ :query OR city @@ :query OR postalcode @@ :query"
-    #   @cards = CollectedCard.where(sql_query, query: "%#{params[:query]}%")
-    # else
-    @collectedcards = CollectedCard.all
-   
-    #   redirect_to collected_cards_path
-    # end
+     if params[:query].present?
+      sql_query = "firstname @@ :query OR lastname @@ :query OR jobtitle @@ :query OR city @@ :query"
+       @cards = CollectedCard.joins(:business_card).where(sql_query, query: "%#{params[:query]}%")
+     else
+       @cards = CollectedCard.all
+     end
   end
 
   def show
