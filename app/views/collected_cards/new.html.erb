@@ -1,9 +1,40 @@
-<h1>QR Code Reader Demo</h1>
-
-<h2>QR Code Reader on Rails</h2>
-
-<div>
-  <video id="video" width="500" height="400"></video>
+<!-- <div class="container">
+  <div class="row justify-content-center distance-margin-top-bottom">
+    <h2>Scan your Card</h1>
+    <div>
+      <video id="video" width="500" height="400"></video>
+    </div>
+  </div>
+  <%= javascript_pack_tag("rails-qr-code-reader") %>
 </div>
+-->
 
-<%= javascript_pack_tag("rails-qr-code-reader") %>
+<%= link_to business_cards_path, class: 'btn-back'  do %>
+    <i class="fas fa-angle-left"></i>
+<% end %>
+
+<div class="container h-100">
+  <div class="header-home text-center distance-margin-top-bottom">
+      <h2>Scan your Card</h1>
+      <div id="btn-action" class="fab fa-creative-commons-share"></div>
+  </div>
+    <div class="row">
+        <div class="col-12 my-auto">
+          <div class="w-100 mx-auto">
+              <div class="container">
+                <div class="row">
+                    <video id="video" class="w-100"></video>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+     <div class="row justify-content-center distance-margin-top-bottom">
+        <div class="col-6">
+            <%= link_to "New Scan","#", id: "click-scan", class: "bg-primary btn btn-lg" %>
+        </div>
+    </div>
+    <%= javascript_pack_tag("rails-qr-code-reader") %>
+</div>
+<%= render '/shared/footer' %>
+ 
