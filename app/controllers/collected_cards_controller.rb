@@ -21,7 +21,13 @@ class CollectedCardsController < ApplicationController
 
   def create
     qr_code = QrCode.create(data: @qr_data)
-    @business_card = BusinessCard.find(qr_code[:data].split("/").last)
+    begin
+      @business_card = BusinessCard.find(qr_code[:data].split("/").last)      #Error handling if input is not readable or cannot be found
+    rescue ActiveRecord::RecordNotFound => e
+      raise
+      puts "Error Message: #{e}"
+      @error_message = e
+    end
     @collected_card = CollectedCard.new(user_id: @business_card[:user_id], business_card_id: @business_card[:id])
     byebug
     # @collected_card[:user_id] = @business_card[:user_id]

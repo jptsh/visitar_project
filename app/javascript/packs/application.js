@@ -30,7 +30,7 @@ import "bootstrap";
 import { initCarouselSlideClick } from '../components/carousel_slide.js';
 import { initCarddOnClick } from '../components/flip_card.js';
 import { initCardOnBtn  } from '../components/flip_card.js';
-
+import { initScanOnClick } from '../components/scan_on_click.js';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -38,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   initCarouselSlideClick();
   initCarddOnClick();
   initCardOnBtn();
+  initScanOnClick();
 });
