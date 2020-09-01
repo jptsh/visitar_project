@@ -2,6 +2,8 @@ class CollectedCardsController < ApplicationController
   before_action :set_qr_data, only: :create
 
   def index
+     
+
      if params[:query].present?
        sql_query = "name @@ :query OR firstname @@ :query OR lastname @@ :query OR jobtitle @@ :query OR city @@ :query"
        @cards = CollectedCard.joins(:business_card).where(sql_query, query: "%#{params[:query]}%")
@@ -30,15 +32,17 @@ class CollectedCardsController < ApplicationController
     # end
     # @collected_card[:user_id] = @business_card[:user_id]
     # @collected_card[:business_card_id] = @business_card[:id]
-
+    
     @business_card = BusinessCard.find_by(id: qr_code[:data].split("/").last)
     if @business_card
-    #binding.pry
       @collected_card = CollectedCard.new(user_id: @business_card[:user_id], business_card_id: @business_card[:id])
       @collected_card.save
+      #binding.pry
+      @new_notification = Notification.new(collected_card_id: @collected_card.id)    #add new notifications to notifications table 
+      @new_notification.save!
+      #binding.pry
       redirect_to collected_cards_path(@collected_card), notice: 'Collected Card was successfully created.'
     else
-    #binding.pry
       redirect_to controller: 'thing', action: 'thing', id: @collected_card.id, error_notice: 'This is a test message'
     end
   end
