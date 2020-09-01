@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(version: 2020_09_01_105907) do
   end
 
   create_table "notifications", force: :cascade do |t|
-    t.bigint "collected_cards_id", null: false
+    t.bigint "collected_card_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["collected_cards_id"], name: "index_notifications_on_collected_cards_id"
+    t.index ["collected_card_id"], name: "index_notifications_on_collected_card_id"
   end
 
   create_table "qr_codes", force: :cascade do |t|
@@ -92,5 +92,5 @@ ActiveRecord::Schema.define(version: 2020_09_01_105907) do
   add_foreign_key "business_cards", "users"
   add_foreign_key "collected_cards", "business_cards"
   add_foreign_key "collected_cards", "users"
-  add_foreign_key "notifications", "collected_cards", column: "collected_cards_id"
+  add_foreign_key "notifications", "collected_cards"
 end
