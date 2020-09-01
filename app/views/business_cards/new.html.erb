@@ -5,23 +5,23 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-4 col-sm-offset-4">
+    <div class="col-xs-12 col-sm-4 col-sm-offset-4" style="background-color: #266678;">
       <div class="form-login">
-        <h2>New Business Card</h2>
+        <h2 class="text-left">Create a new Business Card</h2>
         <%= simple_form_for(@card) do |f| %>
           <%= f.input :photo, as: :file %>
           <%= f.input :name, required: true %>
           <%= f.input :firstname, required: true %>
           <%= f.input :lastname, required: true %>
           <%= f.input :jobtitle, required: true %>
-          <%= f.input :company, required: true %>
-          <%= f.input :streetname %>   
+          <%= f.input :company %>
+          <%= f.input :streetname %>
           <%= f.input :postalcode %>
           <%= f.input :city %>
           <%= f.input :phone %>
           <%= f.input :email, required: true %>
           <%= f.input :website %>
-          <%= f.button :submit, "Create", class: "btn btn-primary create-card" %>
+          <%= f.button :submit, "Create", class: "btn",:input_html =>{:class => "create"} %>
         <% end %>
       </div>
     </div>

@@ -37,6 +37,15 @@
   font-size: 35px;
 }
 
+.create {
+  text-decoration: none;
+  background-color: #C8D5DA;
+  color: #266678;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
 }
 
 .form-control {
@@ -72,10 +81,16 @@
     color: white;
   }
 
+  .btn-view {
+    background-color: #C8D5DA;
+    color: #266678;
+    border-radius: 5px;
+  }
+
   .search-btn {
     border-radius: 5px;
-    background-color: #2AB7D0;
-    color: white;
+    background-color: #C8D5DA;
+    color: #266678;
     font-family: 'Poppins', sans-serif !important;
     padding-top: 6px;
     padding-bottom: 6px;
@@ -85,7 +100,7 @@
 
   .btn-back {
     position: absolute;
-    top: 5px;
+    top: 11px;
     left: 15px;
     font-size: 34px;
     color: black;
@@ -120,8 +135,8 @@
 
   .visitar-button {
     color: white;
-    background-color: #FF814C;
-    font-family: 'Poppins', sans-serif;
+    background-color: #eb8f8f;
+    font-family: 'Montserrat', sans-serif;
     padding-bottom: 8px;
     padding-top: 8px;
     padding-left: 14.5px;
@@ -132,9 +147,9 @@
   }
 
   .register-button {
-    color: white;
-    background-color: #2AB7D0;
-    font-family: 'Poppins', sans-serif;
+    color: #266678;
+    background-color: #C8D5DA;
+    font-family: 'Montserrat', sans-serif;
     padding-bottom: 8px;
     padding-top: 8px;
     padding-left: 11px;
@@ -143,3 +158,24 @@
     font-size: 15px;
 
   }
+
+
+// index page cards
+
+
+.add-btn {
+    width: fit-content;
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    font-size: 30px;
+}
+
+.add-text {
+  width: fit-content;
+  position: absolute;
+  top: -16px;
+  left: 15px;
+  font-size: 27px;
+  font-family: 'Montserrat', sans-serif;
+}

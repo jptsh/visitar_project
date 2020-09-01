@@ -1,107 +1,112 @@
+<div class="indexpage">
+  <div class="profile">
+          <% if user_signed_in? %>
+              <div class="nav-item dropdown">
+                <%= image_tag "https://source.unsplash.com/user/taylormae/400x400", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <div class="dropdown-menu dropdown-menu-right dropdown-custom" aria-labelledby="navbarDropdown">
+                  <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
+                  <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </div>
 
-<div class="profile">
-        <% if user_signed_in? %>
-            <div class="nav-item dropdown">
-              <%= image_tag "https://source.unsplash.com/user/taylormae/400x400", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-right dropdown-custom" aria-labelledby="navbarDropdown">
-                <%= link_to "My Profile", edit_user_registration_path, class: "dropdown-item" %>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
-
-            </div>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Register", new_registration_path(:user), class: "ml-3 nav-link" %>
-          </li>
-        <% end %>
-</div>
-
-<div class="container h-100">
-  <div class="header-home text-center distance-margin-top-bottom">
-    <i class="fas fa-user-tie header-logo"></i>
-    <p>Business Cards</p>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Register", new_registration_path(:user), class: "ml-3 nav-link" %>
+            </li>
+          <% end %>
   </div>
 
-    <div class="row">
-        <div class="col-12 my-auto">
-            <div class="w-100 mx-auto">
+  <div class="container h-100">
+    <!-- <div class="header-home text-center distance-margin-top-bottom">
+      <i class="fas fa-user-tie header-logo"></i>
+      <p>Business Cards</p>
+    </div> -->
+      <!-- <div class="front-slogan">
+        <h2 class="landing-text">SHARE YOUR DIGITAL BUSINESS CARD</h2>
+      </div> -->
 
-                    <div id="carouselExampleControls" class="carousel slide" data-interval="false">
-                        <div class="carousel-inner">
+      <div class="row">
+          <div class="col-12 my-auto" style="margin-top: 5px !important; padding-top: 10px; width: 100%;">
+            <div class="row text-center distance-margin-top-bottom">
+                          <div class="col-12">
+                              <p class="add-text">Business Cards</p>
+                              <a class="add-btn fas fa-plus-circle" href="business_cards/new"></a>
+                          </div>
+                       </div>
+              <div class="w-100 mx-auto">
 
-                            <% @cards.each do |card| %>
-                                <div class="carousel-item <%=  "active" if @cards.first == card  %> ">
-                                    <div class="text-center distance-margin-top-bottom" style="margin-bottom: 5px; font-size: 12px;">
-                                        <%= link_to business_card_path(card) do  %>
-                                            <p> View Card </p>
-                                        <% end %>
-                                    </div>
-                                    <div class="business-card-frame">
-                                            <div class="bc-card-info">
-                                                <div class="bc-card-logo logo-data">
-                                                  <%= card.company %>
-                                                <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-                                                 -->
-                                                 <% if card.photo.attached? %>
-                                                 <%= cl_image_tag card.photo.key, height: 100, width: 100, crop: :thumb %>
-                                                 <% end %>
-                                                </div>
-                                                <div class="bc-head">
-                                                    <div class="box">
-                                                        <div class="box-tag person-data">
-                                                            <span class="bc-card-data card-name"><%= card.firstname %> <%= card.lastname %></span>
-                                                            <br>
-                                                            <span class="bc-card-data card-title"><%= card.jobtitle %></span>
-                                                        </div>
-                                                        <!-- <div class="box-tag">
-                                                            <span class="bc-card-tag">Lastname</span>
-                                                            <br>
-                                                            <span class="bc-card-data"><%= card.lastname %></span>
-                                                        </div> -->
-                                                    </div>
-                                                </div>
-                                                <div class="bc-body">
-                                                    <div class="box">
-                                                        <div class="box-tag contact-data">
-                                                            <span class="bc-card-data"><%=card.phone %></span>
-                                                            <br>
-                                                            <span class="bc-card-data"><%= card.email %></span>
-                                                        </div>
-                                                        <div class="box-tag address-data">
-                                                            <span class="bc-card-data"><%= card.streetname %></span>
-                                                            <br>
-                                                            <span class="bc-card-data"><%= card.postalcode %> <%= card.city %> </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                      <div id="carouselExampleControls" class="carousel slide" data-interval="false">
+                          <div class="carousel-inner">
 
-                                    </div>
+                              <% @cards.each do |card| %>
+                                  <div class="carousel-item <%=  "active" if @cards.first == card  %> ">
 
-                                </div>
-                            <% end %>
-                        </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                    </div>
-                    <div class="row text-center distance-margin-top-bottom">
-                        <div class="col-12">
-                            <a class="btn btn-flat bg-primary btn-new" href="business_cards/new">Add new</a>
-                        </div>
-                     </div>
-            </div>
-        </div>
-    </div>
+                                      <div class="business-card-frame">
+                                              <div class="bc-card-info">
+                                                  <div class="bc-card-logo logo-data">
+                                                    <%= card.company %>
+                                                  <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                                                   -->
+                                                   <% if card.photo.attached? %>
+                                                   <%= cl_image_tag card.photo.key, height: 45, width: 200, crop: :fit %>
+                                                   <% end %>
+                                                  </div>
+                                                  <div class="bc-head">
+                                                      <div class="box">
+                                                          <div class="box-tag person-data">
+                                                              <span class="bc-card-data card-name"><%= card.firstname %> <%= card.lastname %></span>
+                                                              <br>
+                                                              <span class="bc-card-data card-title"><%= card.jobtitle %></span>
+                                                          </div>
+                                                          <!-- <div class="box-tag">
+                                                              <span class="bc-card-tag">Lastname</span>
+                                                              <br>
+                                                              <span class="bc-card-data"><%= card.lastname %></span>
+                                                          </div> -->
+                                                      </div>
+                                                  </div>
+                                                  <div class="bc-body">
+                                                      <div class="box">
+                                                          <div class="box-tag contact-data">
+                                                              <span class="bc-card-data"><%=card.phone %></span>
+                                                              <br>
+                                                              <span class="bc-card-data"><%= card.email %></span>
+                                                          </div>
+                                                          <div class="box-tag address-data">
+                                                              <span class="bc-card-data"><%= card.streetname %></span>
+                                                              <br>
+                                                              <span class="bc-card-data"><%= card.postalcode %> <%= card.city %> </span>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                      </div>
+                                      <div class="text-center distance-margin-top-bottom" style="margin-bottom: 5px; font-size: 12px;">
+                                          <%= link_to business_card_path(card) do  %>
+                                              <p class="btn btn-view">Choose Card</p>
+                                          <% end %>
+                                      </div>
 
+                                  </div>
+                              <% end %>
+                          </div>
+                              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                              </a>
+                      </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
 </div>
 <%= render '/shared/footer' %>
 

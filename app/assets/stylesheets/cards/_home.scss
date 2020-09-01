@@ -1,9 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+// login
+
+.login-customized {
+  background-color: #eb8f8f;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  color: white;
+
+  .login-btn {
+    background-color: white;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  a {
+  font-family: 'Montserrat', sans-serif;
+  }
+
+}
+
+.wrapper {
+  text-align: center;
+  margin-top: 70px;
+}
+
+
 .visitar-header {
   a {
     color: black;
     text-decoration: none;
   }
 }
+
+.landing-text {
+  color: white;
+  font-size: 35px;
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 .header-home {
   padding-top: 20px;
@@ -18,8 +59,9 @@
 }
 
 .card-name-show {
-  font-family: 'Poppins', sans-serif !important;
-  font-size: 20px;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 25px;
+  color: black;
 }
 
 // Design of bussiness card
@@ -63,12 +105,12 @@
 }
 //
 .business-card-frame {  //The card layout
+    margin-top: 10px;
     max-width: 100%;
     height: 200px;
     background-color: white;
     border-radius: 15px;
-    border: 1px solid;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border: 1.3px solid;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
 }
@@ -79,6 +121,9 @@ a {
     text-decoration: none;
 }
 
+.indexpage {
+  background-color: white;
+}
 
 .distance-margin-top-bottom {
     margin-top: 30px;
@@ -103,6 +148,7 @@ a {
 
 body {
   background-color: white;
+  height: 100%;
 }
 
 // Design here the Businesscard information
@@ -131,7 +177,7 @@ body {
 // Design here the footer
 
 .footer-design {
-    background-color: black;
+    background-color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -140,6 +186,16 @@ body {
 .page-footer {
     left: 0;
     bottom: 0;
+}
+
+.frontname {
+  margin-top: 200px;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.front-slogan {
+  margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .btn-cards {
@@ -156,8 +212,10 @@ body {
   margin-left: 20px;
 }
 
+
 .footertext {
   font-size: 13px;
+  color: white;
 }
 
 // Design of the profile avatar on the index page
@@ -165,7 +223,7 @@ body {
 .profile {
   width: fit-content;
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 15px;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
