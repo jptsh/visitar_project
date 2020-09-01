@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   
 
-  resources :collected_cards, only: [:show, :index, :destroy]
+  resources :collected_cards, only: [:show, :index, :destroy, :new, :create]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # resources :business_cards, only: [:destroy]
 end

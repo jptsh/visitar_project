@@ -6,13 +6,15 @@ class BusinessCardsController < ApplicationController
   end
 
   def index
-    @cards = BusinessCard.all
+    @cards = current_user.business_cards 
   end
 
   def show
-     @enc_uri = URI.escape("#{@vcard.to_s}") #encoded uri of vcard for qr api
+     #@enc_uri = URI.escape("#{@vcard.to_s}") #encoded uri of vcard for qr api
+     
      @card = BusinessCard.find(params[:id])
-     @enc_uri = URI.escape("#{@vcard.to_s}")
+     @enc_uri = URI.escape(business_card_path(@card))   # Now with the business_cards/:id QR-Code
+     #@enc_uri = URI.escape("#{@vcard.to_s}")
   end
 
   def create

@@ -21,7 +21,7 @@
 <div class="row">
         <div class="col-12 my-auto">
             <div class="w-80 mx-auto">
-                            <% @collectedcards.each do |card| %>
+                            <% @cards.each do |card| %>
 
                                         <div class="text-center"> <%= link_to collected_card_path(card) do  %>
                                             <%= card.business_card.name %>
