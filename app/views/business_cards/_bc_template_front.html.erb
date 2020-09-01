@@ -3,7 +3,9 @@
     <div class="bc-card-logo logo-data">
       <%= card.company %>
       <% if @card.photo.attached? %>
-      <%= cl_image_tag @card.photo.key, height: 100, width: 100, crop: :thumb %>
+        <div>
+          <%= cl_image_tag @card.photo.key, height: 45, width: 200, crop: :fit %>
+        </div>
       <% end %>
     </div>
     <div class="bc-head">
@@ -35,6 +37,6 @@
       </div>
     </div>
   </div>
-  
+
 </div>
 
