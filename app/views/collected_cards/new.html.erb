@@ -32,7 +32,9 @@
      <div class="row justify-content-center distance-margin-top-bottom">
         <div class="col-6">
             <%= link_to "New Scan","#", id: "click-scan", class: "bg-primary btn btn-lg" %>
+             <%= puts @error_message %>
         </div>
+       
     </div>
     <%= javascript_pack_tag("rails-qr-code-reader") %>
 </div>
