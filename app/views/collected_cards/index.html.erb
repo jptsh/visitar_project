@@ -24,7 +24,7 @@
           <div class="col-12 my-auto">
             <div class="w-80 mx-auto card-content-wrapper" >
               <% @cards.each do |card| %>
-                <div class="text-center"> <%= link_to collected_cards_path(@card) do  %>
+                <div class="text-center"> <%= link_to collected_card_path(card) do  %>
                                      New Business <%= card.business_card.name %> card added 
                                                 <% card_notification = Notification.find_by(collected_card_id: card.id) %>
                                             <% if card_notification %>
