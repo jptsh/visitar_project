@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :set_notifications
-  
+
 
   def after_sign_in_path_for(user)
     business_cards_path
@@ -11,9 +11,12 @@ class ApplicationController < ActionController::Base
     business_cards_path
   end
 
-  private 
+  private
 
   def set_notifications
+
+
     @notifications = current_user.present? ? current_user.notifications : 0     #if a user is logged in create the object. otherwise 0 
+
   end
 end
