@@ -1,5 +1,6 @@
 class CollectedCardsController < ApplicationController
   before_action :set_qr_data, only: :create
+  before_action :destroy_notification, only: :show
 
   def index
      
@@ -13,7 +14,6 @@ class CollectedCardsController < ApplicationController
   end
 
   def show
-    raise
     @collectedcard = CollectedCard.find(params[:id])
   end
 
@@ -67,5 +67,10 @@ class CollectedCardsController < ApplicationController
 
   def card_params
     #params.require(:@collected_card).permit(:user_id, :business_card_id)
+  end
+
+  def destroy_notification
+    @notification_card = Notification.find_by(collected_card_id: params[:id])
+    @notification_card.destroy unless @notification_card.nil?
   end
 end

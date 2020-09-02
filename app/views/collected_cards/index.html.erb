@@ -24,7 +24,11 @@
                             <% @cards.each do |card| %>
 
                                         <div class="text-center"> <%= link_to collected_card_path(card) do  %>
-                                            <%= card.business_card.name %>
+                                           New Business <%= card.business_card.name %> card added 
+                                                <% card_notification = Notification.find_by(collected_card_id: card.id) %>
+                                            <% if card_notification %>
+                                               on <%= card_notification.created_at.strftime("%Y-%m-%d") %> 
+                                            <% end %>
                                         <% end %>
                                         </div>
                                     <div class="business-card-frame">
