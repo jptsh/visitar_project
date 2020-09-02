@@ -28,6 +28,7 @@
                                                 
                                                 <% if Notification.find_by(collected_card_id: card.id) %>
                                                     <!-- display batch -->
+                                                    <span class="badge-overview"></span>
                                                 <% else %>
                                                     <!-- Do something else -->
                                                 <% end %>
