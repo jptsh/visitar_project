@@ -1,5 +1,6 @@
 class CollectedCardsController < ApplicationController
   before_action :set_qr_data, only: :create
+  before_action :destroy_notification, only: :show
 
   def index
      
@@ -13,8 +14,8 @@ class CollectedCardsController < ApplicationController
   end
 
   def show
-    raise
     @collectedcard = CollectedCard.find(params[:id])
+    
   end
 
   def new
@@ -41,7 +42,7 @@ class CollectedCardsController < ApplicationController
       @new_notification = Notification.new(collected_card_id: @collected_card.id)    #add new notifications to notifications table 
       @new_notification.save!
       #binding.pry
-      redirect_to collected_cards_path(@collected_card), notice: 'Collected Card was successfully created.'
+      redirect_to collected_cards_path(@collected_card), notice: 'Business Card was successfully created.'
     else
       redirect_to controller: 'thing', action: 'thing', id: @collected_card.id, error_notice: 'This is a test message'
     end
@@ -67,5 +68,10 @@ class CollectedCardsController < ApplicationController
 
   def card_params
     #params.require(:@collected_card).permit(:user_id, :business_card_id)
+  end
+
+  def destroy_notification
+    @notification_card = Notification.find_by(collected_card_id: params[:id])
+    @notification_card.destroy
   end
 end
