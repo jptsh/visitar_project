@@ -18,13 +18,25 @@
    <%= submit_tag "Search", class: "btn btn-lg btn-block mt-2 search-btn" %>
  <% end %>
 
-<div class="row">
-        <div class="col-12 my-auto">
-            <div class="w-80 mx-auto">
-                            <% @cards.each do |card| %>
+  <div class="row">
+      <div class="col-12 my-auto">
+        <div class="w-80 mx-auto">
+          <% @cards.each do |card| %>
 
+
+            <div class="text-center"> <%= link_to collected_card_path(card) do  %>
+                <%= card.business_card.name %>
+            <% end %>
+            </div>
+            <div class="business-card-frame">
+                <div class="bc-card-info">
+                    <div class="bc-card-logo logo-data">
                                         <div class="text-center"> <%= link_to collected_card_path(card) do  %>
-                                            <%= card.business_card.name %>
+                                           New Business <%= card.business_card.name %> card added 
+                                                <% card_notification = Notification.find_by(collected_card_id: card.id) %>
+                                            <% if card_notification %>
+                                               on <%= card_notification.created_at.strftime("%Y-%m-%d") %> 
+                                            <% end %>
                                         <% end %>
                                         </div>
                                     <div class="business-card-frame">
@@ -48,30 +60,47 @@
                                                             <span class="bc-card-data card-title"><%= card.business_card.jobtitle %></span>
                                                         </div>
 
-                                                    </div>
-                                                </div>
-                                                <div class="bc-body">
-                                                    <div class="box">
-                                                        <div class="box-tag contact-data">
-                                                            <span class="bc-card-data"><%=card.business_card.phone %></span>
-                                                            <br>
-                                                            <span class="bc-card-data"><%= card.business_card.email %></span>
-                                                        </div>
-                                                        <div class="box-tag address-data">
-                                                            <span class="bc-card-data"><%= card.business_card.streetname %></span>
-                                                            <br>
-                                                            <span class="bc-card-data"><%= card.business_card.postalcode %> <%= card.business_card.city %> </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                    <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+                      -->
+                      <% if card.business_card.photo.attached? %>
+                      <%= cl_image_tag card.business_card.photo.key, height: 45, width: 200, crop: :fit %>
+                    <% else %>
+                    <%= card.business_card.company %>
+                      <% end %>
+                    </div>
+                </div>
+                <div class="bc-head">
+                    <div class="box">
+                        <div class="box-tag person-data">
+                            <span class="bc-card-data card-name"><%= card.business_card.firstname %> <%= card.business_card.lastname %></span>
+                            <br>
+                            <span class="bc-card-data card-title"><%= card.business_card.jobtitle %></span>
+                        </div>
 
-                                    </div>
+                    </div>
+                </div>
+                <div class="bc-body">
+                    <div class="box">
+                        <div class="box-tag contact-data">
+                            <span class="bc-card-data"><%=card.business_card.phone %></span>
+                            <br>
+                            <span class="bc-card-data"><%= card.business_card.email %></span>
+                        </div>
+                        <div class="box-tag address-data">
+                            <span class="bc-card-data"><%= card.business_card.streetname %></span>
+                            <br>
+                            <span class="bc-card-data"><%= card.business_card.postalcode %> <%= card.business_card.city %> </span>
+                        </div>
+                    </div>
+                  </div>
+              </div>
 
-                                </div>
-                            <% end %>
-            </div>
         </div>
+
+      </div>
+      <% end %>
+  </div>
+</div>
 
 
 <%= render '/shared/footer' %>

@@ -9,7 +9,7 @@
     <p>Collected Card</p>
   </div>
 
-  <div class="row h-100">
+  <div class="row">
     <div class="col-12 my-auto">
       <div class="w-80 mx-auto">
           <div class="card-trip business-card-frame" style="margin-bottom: 50px; padding: 5px;">
@@ -23,8 +23,14 @@
                 </div>
               </div>
             </div>
-            <%= link_to "delete ", collected_card_path(@collectedcard), method: :delete, class: "btn btn-danger"  %>
-            <%= link_to "Visit website", "http://#{@collectedcard.business_card.website}", class: "btn-website"  %>
+            <div class="row text-center show-buttons">
+              <div class="col-6 btn-website">
+                  <%= link_to "", "http://#{@collectedcard.business_card.website}", class: "fas fa-external-link-alt fa-2x"  %>
+              </div>
+              <div class="col-6 btn-delete">
+                  <%= link_to "", collected_card_path(@collectedcard),method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "fas fa-user-times" %> </p>
+              </div>
+            </div>
        </div>
     </div>
   </div>
