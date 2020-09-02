@@ -19,7 +19,7 @@
 
 <div class="container h-100">
   <div class="header-home text-center distance-margin-top-bottom">
-      <h3 class="text-center distance-margin-top-bottom card-name-show"><%= @card.name %></h3>
+      <h3 class="text-center card-name-show"><%= @card.name %></h3>
       <div id="btn-action" class="fab fa-creative-commons-share"></div>
   </div>
     <div class="row">
@@ -46,10 +46,10 @@
             </section>
             <div class="text-center show-buttons">
               <div class="col-6 btn-edit">
-                    <p><%= link_to "", edit_business_card_path(@card), class: "fas fa-user-edit" %> </p>
+                    <p style="margin-bottom: 0px;"><%= link_to "", edit_business_card_path(@card), class: "fas fa-user-edit" %> </p>
               </div>
               <div class="col-6 btn-delete">
-                    <p><%= link_to "", business_card_path(@card), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "fas fa-user-times" %></p>
+                    <p style="margin-bottom: 0px;"><%= link_to "", business_card_path(@card), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "fas fa-user-times" %></p>
               </div>
             </div>
           </div>
