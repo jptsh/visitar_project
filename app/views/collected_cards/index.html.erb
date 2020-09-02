@@ -32,22 +32,11 @@
                 <div class="bc-card-info">
                     <div class="bc-card-logo logo-data">
                                         <div class="text-center"> <%= link_to collected_card_path(card) do  %>
-<<<<<<< HEAD
-                                            <%= card.business_card.name %>
-                                                
-                                                <% if Notification.find_by(collected_card_id: card.id) %>
-                                                    <!-- display batch -->
-                                                    <span class="badge-overview"></span>
-                                                <% else %>
-                                                    <!-- Do something else -->
-                                                <% end %>
-=======
                                            New Business <%= card.business_card.name %> card added 
                                                 <% card_notification = Notification.find_by(collected_card_id: card.id) %>
                                             <% if card_notification %>
                                                on <%= card_notification.created_at.strftime("%Y-%m-%d") %> 
                                             <% end %>
->>>>>>> 70268982b165b648881d35050b7f549bcf6198e6
                                         <% end %>
                                         </div>
                                     <div class="business-card-frame">
