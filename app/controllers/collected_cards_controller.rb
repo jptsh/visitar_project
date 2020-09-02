@@ -72,6 +72,6 @@ class CollectedCardsController < ApplicationController
 
   def destroy_notification
     @notification_card = Notification.find_by(collected_card_id: params[:id])
-    @notification_card.destroy
+    @notification_card.destroy unless @notification_card.nil?
   end
 end
