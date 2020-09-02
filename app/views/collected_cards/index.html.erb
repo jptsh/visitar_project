@@ -62,39 +62,7 @@
                                                             <span class="bc-card-data card-title"><%= card.business_card.jobtitle %></span>
                                                         </div>
 
-                    <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-                      -->
-                      <% if card.business_card.photo.attached? %>
-                      <%= cl_image_tag card.business_card.photo.key, height: 45, width: 200, crop: :fit %>
-                    <% else %>
-                    <%= card.business_card.company %>
-                      <% end %>
-                    </div>
-                </div>
-                <div class="bc-head">
-                    <div class="box">
-                        <div class="box-tag person-data">
-                            <span class="bc-card-data card-name"><%= card.business_card.firstname %> <%= card.business_card.lastname %></span>
-                            <br>
-                            <span class="bc-card-data card-title"><%= card.business_card.jobtitle %></span>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="bc-body">
-                    <div class="box">
-                        <div class="box-tag contact-data">
-                            <span class="bc-card-data"><%=card.business_card.phone %></span>
-                            <br>
-                            <span class="bc-card-data"><%= card.business_card.email %></span>
-                        </div>
-                        <div class="box-tag address-data">
-                            <span class="bc-card-data"><%= card.business_card.streetname %></span>
-                            <br>
-                            <span class="bc-card-data"><%= card.business_card.postalcode %> <%= card.business_card.city %> </span>
-                        </div>
-                    </div>
-                  </div>
+                    
               </div>
 
         </div>
