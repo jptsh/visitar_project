@@ -41,7 +41,7 @@ class CollectedCardsController < ApplicationController
       @new_notification = Notification.new(collected_card_id: @collected_card.id)    #add new notifications to notifications table 
       @new_notification.save!
       #binding.pry
-      redirect_to collected_cards_path(@collected_card), notice: 'Collected Card was successfully created.'
+      redirect_to collected_cards_path(@collected_card), notice: 'Business Card was successfully created.'
     else
       redirect_to controller: 'thing', action: 'thing', id: @collected_card.id, error_notice: 'This is a test message'
     end
