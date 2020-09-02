@@ -25,6 +25,12 @@
 
                                         <div class="text-center"> <%= link_to collected_card_path(card) do  %>
                                             <%= card.business_card.name %>
+                                                
+                                                <% if Notification.find_by(collected_card_id: card.id) %>
+                                                    <!-- display batch -->
+                                                <% else %>
+                                                    <!-- Do something else -->
+                                                <% end %>
                                         <% end %>
                                         </div>
                                     <div class="business-card-frame">
