@@ -3,13 +3,12 @@ class CollectedCardsController < ApplicationController
   before_action :destroy_notification, only: :show
 
   def index
-     
-
      if params[:query].present?
        sql_query = "name @@ :query OR firstname @@ :query OR lastname @@ :query OR jobtitle @@ :query OR city @@ :query"
        @cards = CollectedCard.joins(:business_card).where(sql_query, query: "%#{params[:query]}%")
      else
-       @cards = CollectedCard.all
+       #@cards = CollectedCard.all
+       @cards = CollectedCard.order(created_at: :desc) #show the last cards first
      end
   end
 
