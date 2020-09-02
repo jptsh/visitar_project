@@ -15,7 +15,7 @@
 
 
 .fa-creative-commons-share:before {
-    color: #FF814C !important;
+    color: #CE5374!important;
     font-size: 60px;
 }
 
@@ -30,10 +30,16 @@
   // edit button
 .btn-edit{
 
-  padding-right: 0px;
+
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 12px;
+  max-width: 150px;
 
   .fa-user-edit:before {
-  color: #2AB7D0 !important;
+  color: #518896 !important;
   font-size: 35px;
 }
 
@@ -63,7 +69,13 @@
 
 .btn-delete {
 
-  padding-left: 0px;
+  border: 1px solid;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  max-width: 150px;
+
 
   .fa-user-times:before {
   color: #eb8f8f !important;

@@ -32,7 +32,7 @@ user1 = User.create!(email: "jaber@example.com", password: "123456")
 puts "user1 created"
 user2 = User.create!(email: "jp@example.com", password: "1234567")
 puts "user2 created"
-user3 = User.create!(email: "ecschulte@example.com", password: "123456")
+user3 = User.create!(email: "ecschulte@gmx.com", password: "123456")
 puts "user3 created"
 
 collectedcard1 = BusinessCard.create!(

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :collected_card, only: [:new, :create, :index]
   end
 
+  resources :notifications, only: [:destroy]
   
 
   resources :collected_cards, only: [:show, :index, :destroy, :new, :create]

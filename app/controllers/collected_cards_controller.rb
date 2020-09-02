@@ -15,6 +15,7 @@ class CollectedCardsController < ApplicationController
 
   def show
     @collectedcard = CollectedCard.find(params[:id])
+    
   end
 
   def new
