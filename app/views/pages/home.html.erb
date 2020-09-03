@@ -1,18 +1,37 @@
 
-<div class="hero-image">
-  <div class="hero-text text-center" style="height: 100%;">
+<div class="banner">
+  <div class="landingpage text-center">
+      <!-- <h1 class="front-name">VISITAR</h1>
+      <p class="front-slogan">The genuine way to connect</p> -->
+    <div class="welcome">
 
-    <h1 class="frontname">VISITAR</h1>
-    <p class="front-slogan">The genuine way to connect</p>
-
-      <div class="landing buttons" style="margin-top: 60px">
-        <div class="visitar text-center">
-          <%= link_to "VISITAR", new_user_session_path, class: "visitar-button" %>
-        </div>
-        <br>
-        <div class="register text-center">
-          <%= link_to "Register", new_registration_path(:user), class: "register-button" %>
-        </div>
+      <div class="topicone text-center">
+        <h3 class="topicheadersone">VISITAR</h3>
+        <h5 class="fronttextslogan">Digital Business Cards</h5>
+        <h5 class="fronttextslogan">The genuine way to connect</h5>
       </div>
+
+      <div class="topictwo text-center">
+        <i class="fas fa-users iconone"></i>
+        <h3 class="topicheaders">Contactless, real connections.</h3>
+        <p>Hand shakes and paper cards are no longer acceptable in the world post COVID19.</p>
+      </div>
+
+      <div class="topicthree text-center">
+        <i class="fab fa-pagelines icontwo"></i>
+        <h3 class="topicheaders">0% paper, 100% sustainable.</h3>
+        <p>2 million trees are cut down every year to print business cards.</p>
+      </div>
+
+        <div class="landing buttons d-flex justify-content-center" style="margin-top: 40px">
+          <div class="visitar text-center" style="margin-right: 7px;">
+            <%= link_to "Log in", new_user_session_path, class: "visitar-button" %>
+          </div>
+          <br>
+          <div class="register text-center" style="margin-left: 7px;">
+            <%= link_to "Register", new_registration_path(:user), class: "register-button" %>
+          </div>
+        </div>
+    </div>
   </div>
 </div>

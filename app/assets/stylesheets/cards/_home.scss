@@ -2,6 +2,9 @@
 
 // login
 
+
+
+
 .login-customized {
   background-color: #1e5260;
   padding-left: 80px;
@@ -58,8 +61,91 @@
 .scan-card {
   font-family: 'Montserrat', sans-serif;
   font-size: 27px;
+}
+
+// Landing page
+
+.welcome {
+  background-image: asset-url('men.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 800px;
 
 }
+
+.landingpage {
+
+}
+
+.iconone {
+  font-size: 40px;
+  margin-bottom: 5px;
+  color: #3697af;
+}
+
+.icontwo {
+  font-size: 40px;
+  margin-bottom: 5px;
+  color: #26c941;
+}
+
+.topicone {
+  padding-top: 30px;
+  margin-bottom: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+  p {
+  margin-bottom: 0px;
+  margin-right: 20px;
+  margin-left: 20px;
+  }
+}
+
+.topictwo {
+  margin-bottom: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+  p {
+  margin-bottom: 0px;
+  margin-right: 20px;
+  margin-left: 20px;
+  }
+}
+
+.topicthree {
+  margin-bottom: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+  p {
+  margin-bottom: 0px;
+  margin-right: 20px;
+  margin-left: 20px;
+  }
+}
+
+.topicheadersone {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.topicheaders {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
 .landing-text {
   color: white;
   font-size: 35px;
@@ -163,6 +249,13 @@ a {
 }
 
 // Design the landing slogan
+
+.fronttextslogan {
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
 
 .slogan {
   margin-top: 60px;
