@@ -24,6 +24,7 @@
           <div class="col-12 my-auto">
             <div class="w-80 mx-auto card-content-wrapper" >
               <% @cards.each do |card| %>
+<<<<<<< HEAD
                 <div class="text-center"> <%= link_to collected_card_path(card) do  %>
                                      New Business <%= card.business_card.name %> card added 
                                                 <% card_notification = Notification.find_by(collected_card_id: card.id) %>
@@ -31,10 +32,22 @@
                                                on <%= card_notification.created_at.strftime("%Y-%m-%d") %> 
                                             <% end %>
                                         <% end %>
+=======
+                    <div class="text-center"> <%= link_to collected_card_path(card) do  %>
+                        <%= card.business_card.name %> 
+                        <% @card_notification = Notification.find_by(collected_card_id: card.id) %>
+                        <% if @card_notification %>
+                            New Business card added <%= @card_notification.created_at.strftime("%Y-%m-%d at %I:%M:%S") %> 
+                        <% end %>
+                    <% end %>
+>>>>>>> cf5853657113c8ea47dc5dfa65af14799da6f368
                       <div class="business-card-frame">
                     <div class="bc-card-info">
                       <div class="bc-card-logo logo-data">
                           <%= card.business_card.company %>
+                          <% if @card_notification %>
+                            <span class="badge-overview font-weight-bold">NEW</span>
+                          <% end %>
                       </div>
                       <div class="bc-head header-bcards">
                           <div class="box">

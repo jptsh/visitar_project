@@ -16,16 +16,47 @@
 
 .fa-creative-commons-share:before {
     color: #CE5374!important;
-    font-size: 60px;
+    font-size: 35px;
+    padding: 5px;
 }
+
+.handshake {
+  color: #CE5374!important;
+  font-size: 60px;
+}
+
 
 
 // show business cards
 
 .show-buttons {
+  padding-top: 20px;
   display: flex;
   align-items: center;
 }
+
+.share-icon {
+  font-size: 30px;
+  margin-right: 10px;
+  color: #266678;
+}
+
+.qr-btn {
+  color: #266678;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  margin-bottom: 0px;
+  font-size: 1rem;
+}
+
+.qr-field-scan {
+  border: 1px solid;
+  border-radius: 10px;
+  margin-right: 11px;
+  margin-left: 11px;
+  background-color: #C8D5DA;
+}
+
 
   // edit button
 .btn-edit{
