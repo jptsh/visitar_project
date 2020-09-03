@@ -19,6 +19,10 @@
     font-family: 'Montserrat', sans-serif;
   }
 
+  .card {
+    background-color: none !important;
+  }
+
   h2 {
     font-family: 'Montserrat', sans-serif;
   }
@@ -44,6 +48,12 @@
     text-decoration: none;
   }
 }
+
+// QR code is not displaying on the back bug
+.card-custom {
+  background-color: transparent !important;
+}
+
 
 .scan-card {
   font-family: 'Montserrat', sans-serif;
