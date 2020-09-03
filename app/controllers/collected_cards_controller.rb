@@ -8,7 +8,8 @@ class CollectedCardsController < ApplicationController
        @cards = CollectedCard.joins(:business_card).where(sql_query, query: "%#{params[:query]}%")
      else
        #@cards = CollectedCard.all
-       @cards = CollectedCard.order(created_at: :desc).where(user_id: current_user.id) #show the last cards first
+       @cards = CollectedCard.order(created_at: :desc) #show the last cards first
+      
      end
   end
 
