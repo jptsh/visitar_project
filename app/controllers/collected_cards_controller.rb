@@ -39,7 +39,7 @@ class CollectedCardsController < ApplicationController
       @collected_card = CollectedCard.new(user_id: @business_card[:user_id], business_card_id: @business_card[:id])
       @collected_card.save
       #binding.pry
-      @new_notification = Notification.new(collected_card_id: @collected_card.id)    #add new notifications to notifications table 
+      @new_notification = Notification.new(collected_card_id: @collected_card.id, user_id: current_user.id)    #add new notifications to notifications table 
       @new_notification.save!
       #binding.pry
       redirect_to collected_cards_path(@collected_card), notice: 'Business Card was successfully created.'
