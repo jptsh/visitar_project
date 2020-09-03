@@ -28,73 +28,73 @@ User.destroy_all
 
 
 
-user1 = User.create!(email: "jaber@example.com", password: "123456")
+jaber = User.create!(email: "jaber@example.com", password: "123456")
 puts "user1 created"
-user2 = User.create!(email: "jp@example.com", password: "1234567")
+jp = User.create!(email: "jp@example.com", password: "1234567")
 puts "user2 created"
-user3 = User.create!(email: "ecschulte@gmx.com", password: "123456")
+ecschulte = User.create!(email: "ecschulte@gmx.com", password: "123456")
 puts "user3 created"
 
 collectedcard1 = BusinessCard.create!(
-  name: "Le Wagon",
-  firstname: "Jaber",
+  name: "Student Card",
+  firstname: "Jean-Pierre",
   company: "Le Wagon",
-  email: "jaber@gmail.com",
+  email: "jp@example.com",
   phone: "+49 171 567755",
   jobtitle: "Web Developer",
   website: "www.lewagon.com/berlin",
-  user_id: user2.id,
-  lastname: "Al Adawi",
+  user_id: jp.id,
+  lastname: "Liberte",
   streetname: "Kochstraße 40",
   postalcode: "1654",
   city: "Berlin"
  )
- puts "collectedcard1"
+ puts "Businesscard of JP"
 
 collectedcard2 = BusinessCard.create!(
-  name: "Google",
+  name: "Event Card",
   firstname: "Jaber",
   company: "Google",
   email: "jaber@google.com",
   phone: "+49 173 746 2234",
   jobtitle: "Junior Developer",
   website: "www.google.com",
-  user_id: user2.id,
+  user_id: jaber.id,
   lastname: "Al Adawi",
   streetname: "Bondstreet 10",
   postalcode: "6556",
   city: "Dublin"
   )
-  puts "collected card 2"
+  puts "Businesscard of Jaber"
 
 collectedcard3 = BusinessCard.create!(
-  name: "BCG",
+  name: "Company Card",
   firstname: "Eduard",
   company: "BCG",
   email: "ecschulte@gmx.de",
   phone: "+49 173 645 2234",
   jobtitle: "Junior Consultant",
   website: "www.bcg.com",
-  user_id: user3.id,
+  user_id: ecschulte.id,
   lastname: "Schulte",
   streetname: "Anklamer 18",
   postalcode: "1230",
   city: "Berlin"
   )
-  puts "collected card 3"
+  puts "Businesscard of Eduard"
 
 
 CollectedCard.create!(
-  user_id: user1.id ,
-  business_card_id: collectedcard1.id,
-)
-
-CollectedCard.create!(
-  user_id: user1.id ,
+  user_id: jp.id ,
   business_card_id: collectedcard2.id,
 )
 
-CollectedCard.create!(
-  user_id: user1.id ,
-  business_card_id: collectedcard3.id,
-)
+# CollectedCard.create!(
+#   user_id: user1.id ,
+#   business_card_id: collectedcard2.id,
+# )
+
+# CollectedCard.create!(
+#   user_id: user1.id ,
+#   business_card_id: collectedcard3.id,
+# )
