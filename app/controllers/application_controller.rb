@@ -14,6 +14,6 @@ class ApplicationController < ActionController::Base
   private
 
   def set_notifications
-    @notifications = current_user.present? ? current_user.notifications : 0     #if a user is logged in create the object. otherwise 0 
+    @notifications = current_user.present? ? Notification.where(user_id: current_user.id) : 0     #if a user is logged in create the object. otherwise 0
   end
 end
