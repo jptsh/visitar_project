@@ -6,8 +6,8 @@
 
   <div class="header-collected text-center">
     <i class="fas fa-layer-group header-logo"></i>
-    <p>Collected Card</p>
-  </div>
+<!--     <p><%= @collectedcard.business_card.firstname%> <%=@collectedcard.business_card.lastname%></p>
+ -->  </div>
 
   <div class="business-card-frame">
     <div class="bc-card-info">
@@ -41,6 +41,14 @@
             </div>
        </div>
     </div>
+    <div class="text-center show-buttons show-collected">
+              <div class="col-6 btn-edit">
+                    <p style="margin-bottom: 0px;"><%= link_to "", "http://#{@collectedcard.business_card.website}", class: "fas fa-external-link-alt" %> </p>
+              </div>
+              <div class="col-6 btn-delete">
+                    <p style="margin-bottom: 0px;"><%= link_to "", collected_card_path(@collectedcard), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "fas fa-user-times" %></p>
+              </div>
+      </div>
   </div>
  </div>
 <%= render '/shared/footer' %>

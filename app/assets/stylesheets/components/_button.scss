@@ -35,6 +35,12 @@
   align-items: center;
 }
 
+.show-collected {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+}
+
 .share-icon {
   font-size: 30px;
   margin-right: 10px;
@@ -50,7 +56,8 @@
 }
 
 .qr-field-scan {
-  border: 1px solid;
+  // border: 1px solid;
+  box-shadow: 0px 1px 2px 0px #676767;
   border-radius: 10px;
   margin-right: 11px;
   margin-left: 11px;
@@ -61,8 +68,8 @@
   // edit button
 .btn-edit{
 
-
-  border: 1px solid;
+  box-shadow: 0px 1px 2px 0px #676767;
+  // border: 1px solid;
   padding: 5px;
   border-radius: 10px;
   margin-right: 10px;
@@ -70,6 +77,11 @@
   max-width: 150px;
 
   .fa-user-edit:before {
+  color: #518896 !important;
+  font-size: 35px;
+}
+
+.fa-external-link-alt:before {
   color: #518896 !important;
   font-size: 35px;
 }
@@ -100,7 +112,8 @@
 
 .btn-delete {
 
-  border: 1px solid;
+  box-shadow: 0px 1px 2px 0px #676767;
+  // border: 1px solid;
   padding: 5px;
   border-radius: 10px;
   margin-left: 10px;
@@ -131,9 +144,14 @@
   }
 
   .btn-view {
+    box-shadow: 0px 1px 2px 0px #676767;
     background-color: #C8D5DA;
     color: #266678;
     border-radius: 5px;
+  }
+
+  .show-collected {
+
   }
 
   .search-btn {
@@ -145,6 +163,7 @@
     padding-bottom: 6px;
     font-size: 1rem;
     margin-bottom: 20px;
+    box-shadow: 0px 1px 2px 0px #676767;
   }
 
   .btn-back {
