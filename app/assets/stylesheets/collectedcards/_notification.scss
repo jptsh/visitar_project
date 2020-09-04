@@ -7,11 +7,12 @@
     display: inline-block;
     border-radius: 2px;
   }
-  
+
   .notification:hover {
     background: red;
   }
-  
+
+  //on footer
  .badge {
     position: absolute;
     top: -10px;
@@ -19,20 +20,22 @@
     padding: 1px 5px;
     z-index: 1;
     border-radius: 50%;
-    background: red;
+    background: #cb7b7a;
     color: white;
     font-size: 18px;
-    
   }
 
+// on card
   .badge-overview {
-    
+
     padding: 5px 5px 5px 5px;
     border-radius: 50%;
-    background: red;
+    background: #cb7b7a !important;
     color: white;
     font-size: 18px;
-    
+    position: absolute !important;
+    right: 30px !important;
+
   }
 
   .hidden {
