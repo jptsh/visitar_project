@@ -6,35 +6,51 @@
 
   <div class="header-collected text-center">
     <i class="fas fa-layer-group header-logo"></i>
-    <p>Collected Card</p>
-  </div>
+<!--     <p><%= @collectedcard.business_card.firstname%> <%=@collectedcard.business_card.lastname%></p>
+ -->  </div>
 
-  <div class="row">
-    <div class="col-12 my-auto">
-      <div class="w-80 mx-auto">
-          <div class="card-trip business-card-frame" style="margin-bottom: 50px; padding: 5px;">
-              <div class="card-trip-infos col-auto mb-3">
-                <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-                <div>
-                  <h3><%= @collectedcard.business_card.name %></h3>
-                  <p><strong><%= "Name: #{@collectedcard.business_card.firstname} #{@collectedcard.business_card.lastname}" %></strong></p>
-                  <p><%= "phone: #{@collectedcard.business_card.phone}" %></p>
-                  <p><%= "email: #{@collectedcard.business_card.email}" %></p>
+  <div class="business-card-frame">
+    <div class="bc-card-info">
+        <div class="bc-card-logo logo-data">
+          <%= @collectedcard.business_card.company %>
+          <% if @collectedcard.business_card.photo.attached? %>
+          <%= cl_image_tag @collectedcard.business_card.photo.key, height: 45, width: 200, crop: :fit %>
+          <% end %>
+        </div>
+        <div class="bc-head">
+            <div class="box">
+                <div class="box-tag person-data">
+                    <span class="bc-card-data card-name"><%= @collectedcard.business_card.firstname %> <%= @collectedcard.business_card.lastname %></span>
+                    <br>
+                    <span class="bc-card-data card-title"><%= @collectedcard.business_card.jobtitle %></span>
                 </div>
               </div>
             </div>
-            <div class="row text-center">
-              <div class="col-6 ">
-                  <%= link_to "", "http://#{@collectedcard.business_card.website}", class: "fas fa-external-link-alt fa-2x btn bg-light w-100 rounded"  %>
-              </div>
-              <div class="col-6 ">
-                  <%= link_to "", collected_card_path(@collectedcard),method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "fas fa-user-times fa-2x btn bg-light w-100 rounded" %> </p>
-              </div>
+        <div class="bc-body">
+            <div class="box">
+                <div class="box-tag contact-data">
+                    <span class="bc-card-data"><%=@collectedcard.business_card.phone %></span>
+                    <br>
+                    <span class="bc-card-data"><%= @collectedcard.business_card.email %></span>
+                </div>
+                <div class="box-tag address-data">
+                    <span class="bc-card-data"><%= @collectedcard.business_card.streetname %></span>
+                    <br>
+                    <span class="bc-card-data"><%= @collectedcard.business_card.postalcode %> <%= @collectedcard.business_card.city %> </span>
+                </div>
             </div>
        </div>
     </div>
-  </div>  
-</div>
+    <div class="text-center show-buttons show-collected">
+              <div class="col-6 btn-edit">
+                    <p style="margin-bottom: 0px;"><%= link_to "", "http://#{@collectedcard.business_card.website}", class: "fas fa-external-link-alt" %> </p>
+              </div>
+              <div class="col-6 btn-delete">
+                    <p style="margin-bottom: 0px;"><%= link_to "", collected_card_path(@collectedcard), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "fas fa-user-times" %></p>
+              </div>
+      </div>
+  </div>
+ </div>
 <%= render '/shared/footer' %>
 
 
