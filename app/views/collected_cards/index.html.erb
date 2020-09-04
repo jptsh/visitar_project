@@ -26,7 +26,7 @@
                     <div class="text-center"> <%= link_to collected_card_path(card) do  %>
                         <% @card_notification = Notification.find_by(collected_card_id: card.id) %>
                         <% if @card_notification %>
-                            New Business card added <%= @card_notification.created_at.strftime("%Y-%m-%d at %I:%M:%S") %>
+                            <span class="noti-text"> New Business card added <%= @card_notification.created_at.strftime("%Y-%m-%d at %I:%M:%S") %></span>
                         <% end %>
                     <% end %>
                   <%= link_to collected_card_path(card) do  %>
