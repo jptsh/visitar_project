@@ -21,3 +21,19 @@
   box-shadow: 0px 1px 2px 0px #676767;
 }
 
+.btn-call {
+
+  box-shadow: 0px 1px 2px 0px #676767;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+  max-width: 150px;
+
+  .fa-phone-alt:before {
+    content: "\f879";
+    color: #B6CCA1 !important;
+    text-decoration: none;
+    font-size: 35px;
+  }
+}
