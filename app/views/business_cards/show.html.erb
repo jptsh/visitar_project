@@ -50,6 +50,7 @@
               <div class="col-6 btn-edit">
                     <p style="margin-bottom: 0px;"><%= link_to "", edit_business_card_path(@card), class: "fas fa-user-edit" %> </p>
               </div>
+
               <div class="col-6 btn-delete">
                     <p style="margin-bottom: 0px;"><%= link_to "", business_card_path(@card), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "fas fa-user-times" %></p>
               </div>

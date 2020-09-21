@@ -45,7 +45,10 @@
               <div class="col-6 btn-edit">
                     <p style="margin-bottom: 0px;"><%= link_to "", "http://#{@collectedcard.business_card.website}", class: "fas fa-external-link-alt" %> </p>
               </div>
-              <div class="col-6 btn-delete">
+              <div class="col-6 btn-call">
+                    <a href="tel:<%= @collectedcard.business_card.phone %>"><i class="fas fa-phone-alt"></i></a>
+              </div>
+              <div class="col-6 btn-delete" style="position: absolute; bottom: 280px; left: 18px;">
                     <p style="margin-bottom: 0px;"><%= link_to "", collected_card_path(@collectedcard), method: :delete, remote: true, data: { confirm: 'Are you sure?' }, class: "fas fa-user-times" %></p>
               </div>
       </div>
